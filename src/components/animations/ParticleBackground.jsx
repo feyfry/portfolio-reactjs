@@ -213,27 +213,24 @@ const ParticleBackground = ({
 
     // Render particle based on shape
     const renderParticle = (particle) => {
-        const baseProps = {
-            key: particle.id,
-            style: {
-                position: 'absolute',
-                left: particle.x,
-                top: particle.y,
-                width: particle.size,
-                height: particle.size,
-                opacity: particle.opacity,
-                transform: `translate(-50%, -50%) rotate(${particle.angle}rad)`,
-                pointerEvents: 'none'
-            }
+        const baseStyle = {
+            position: 'absolute',
+            left: particle.x,
+            top: particle.y,
+            width: particle.size,
+            height: particle.size,
+            opacity: particle.opacity,
+            transform: `translate(-50%, -50%) rotate(${particle.angle}rad)`,
+            pointerEvents: 'none'
         }
 
         switch (shape) {
             case 'square':
                 return (
                     <div
-                        {...baseProps}
+                        key={particle.id}
                         style={{
-                            ...baseProps.style,
+                            ...baseStyle,
                             backgroundColor: particle.color,
                             borderRadius: '2px'
                         }}
@@ -242,9 +239,9 @@ const ParticleBackground = ({
             case 'triangle':
                 return (
                     <div
-                        {...baseProps}
+                        key={particle.id}
                         style={{
-                            ...baseProps.style,
+                            ...baseStyle,
                             width: 0,
                             height: 0,
                             borderLeft: `${particle.size / 2}px solid transparent`,
@@ -257,9 +254,9 @@ const ParticleBackground = ({
             case 'star':
                 return (
                     <div
-                        {...baseProps}
+                        key={particle.id}
                         style={{
-                            ...baseProps.style,
+                            ...baseStyle,
                             color: particle.color,
                             fontSize: particle.size,
                             lineHeight: 1
@@ -272,9 +269,9 @@ const ParticleBackground = ({
             default:
                 return (
                     <div
-                        {...baseProps}
+                        key={particle.id}
                         style={{
-                            ...baseProps.style,
+                            ...baseStyle,
                             backgroundColor: particle.color,
                             borderRadius: '50%'
                         }}
