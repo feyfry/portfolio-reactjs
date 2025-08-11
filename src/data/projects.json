@@ -1,0 +1,293 @@
+{
+    "featured": [{
+            "id": 1,
+            "title": "EcoCommerce Platform",
+            "description": "A sustainable e-commerce platform connecting eco-conscious consumers with environmentally friendly products. Features include carbon footprint tracking, sustainability ratings, and green delivery options.",
+            "image": "/assets/images/projects/ecommerce-platform.jpg",
+            "technologies": ["React", "Node.js", "PostgreSQL", "Stripe", "Docker", "AWS"],
+            "github": "https://github.com/alextanaka/ecocommerce",
+            "demo": "https://ecocommerce-demo.vercel.app",
+            "category": "Web Application",
+            "status": "Completed",
+            "year": 2024,
+            "duration": "4 months",
+            "teamSize": 1,
+            "role": "Full Stack Developer",
+            "highlights": [
+                "Integrated Stripe payment system with subscription support",
+                "Implemented real-time inventory management",
+                "Built comprehensive admin dashboard",
+                "Achieved 95+ PageSpeed Insights score"
+            ],
+            "challenges": [
+                "Complex product categorization system",
+                "Real-time inventory synchronization",
+                "Payment processing edge cases"
+            ],
+            "learnings": [
+                "Advanced React patterns and performance optimization",
+                "Microservices architecture design",
+                "Payment gateway integration best practices"
+            ],
+            "japanese": {
+                "title": "エココマースプラットフォーム",
+                "description": "環境に配慮した消費者と環境に優しい製品をつなぐ持続可能なeコマースプラットフォーム。",
+                "role": "フルスタック開発者"
+            }
+        },
+        {
+            "id": 2,
+            "title": "TaskFlow - Project Management",
+            "description": "Modern project management tool with intuitive kanban boards, time tracking, team collaboration features, and AI-powered task prioritization. Built for remote teams.",
+            "image": "/assets/images/projects/taskflow.jpg",
+            "technologies": ["Next.js", "TypeScript", "Prisma", "tRPC", "Tailwind CSS", "Vercel"],
+            "github": "https://github.com/alextanaka/taskflow",
+            "demo": "https://taskflow-pm.vercel.app",
+            "category": "Web Application",
+            "status": "Completed",
+            "year": 2024,
+            "duration": "3 months",
+            "teamSize": 2,
+            "role": "Lead Frontend Developer",
+            "highlights": [
+                "Real-time collaboration with Socket.io",
+                "Drag-and-drop task management",
+                "Advanced filtering and search",
+                "Mobile-responsive design"
+            ],
+            "challenges": [
+                "Real-time synchronization across multiple users",
+                "Complex state management for drag-and-drop",
+                "Performance optimization for large datasets"
+            ],
+            "learnings": [
+                "Advanced TypeScript patterns",
+                "Real-time application architecture",
+                "Modern React ecosystem (tRPC, Prisma)"
+            ],
+            "japanese": {
+                "title": "タスクフロー - プロジェクト管理",
+                "description": "直感的なかんばんボード、時間追跡、チーム協力機能を備えたモダンなプロジェクト管理ツール。",
+                "role": "リードフロントエンド開発者"
+            }
+        },
+        {
+            "id": 3,
+            "title": "MoodTracker Mobile App",
+            "description": "Mental health and mood tracking application with daily check-ins, mood analytics, meditation guides, and professional therapist connections. Focus on user privacy and data security.",
+            "image": "/assets/images/projects/moodtracker.jpg",
+            "technologies": ["React Native", "Expo", "Supabase", "TypeScript", "React Query"],
+            "github": "https://github.com/alextanaka/moodtracker",
+            "demo": "https://expo.dev/@alextanaka/moodtracker",
+            "category": "Mobile App",
+            "status": "Completed",
+            "year": 2023,
+            "duration": "5 months",
+            "teamSize": 3,
+            "role": "Mobile Developer",
+            "highlights": [
+                "Cross-platform iOS and Android compatibility",
+                "Offline-first architecture with sync",
+                "Biometric authentication",
+                "Push notifications for mood reminders"
+            ],
+            "challenges": [
+                "Handling sensitive mental health data",
+                "Offline data synchronization",
+                "Platform-specific UI considerations"
+            ],
+            "learnings": [
+                "React Native best practices",
+                "Mobile app security patterns",
+                "Healthcare data compliance (HIPAA considerations)"
+            ],
+            "japanese": {
+                "title": "ムードトラッカー モバイルアプリ",
+                "description": "日々のチェックイン、ムード分析、瞑想ガイドを備えたメンタルヘルス・ムード追跡アプリケーション。",
+                "role": "モバイル開発者"
+            }
+        }
+    ],
+    "other": [{
+            "id": 4,
+            "title": "Weather Dashboard",
+            "description": "Beautiful and responsive weather application with location detection, 7-day forecasts, weather maps, and customizable widgets. Features smooth animations and dark mode support.",
+            "image": "/assets/images/projects/weather-dashboard.jpg",
+            "technologies": ["React", "OpenWeather API", "Chart.js", "Geolocation", "PWA"],
+            "github": "https://github.com/alextanaka/weather-dashboard",
+            "demo": "https://weather-dashboard-alex.netlify.app",
+            "category": "Web Application",
+            "status": "Completed",
+            "year": 2023,
+            "duration": "1 month",
+            "teamSize": 1,
+            "role": "Frontend Developer",
+            "highlights": [
+                "Progressive Web App (PWA) features",
+                "Responsive design for all devices",
+                "Smooth animations with Framer Motion",
+                "Dark/light mode toggle"
+            ],
+            "japanese": {
+                "title": "天気ダッシュボード",
+                "description": "位置検出、7日間予報、天気マップを備えた美しいレスポンシブ天気アプリケーション。",
+                "role": "フロントエンド開発者"
+            }
+        },
+        {
+            "id": 5,
+            "title": "Code Snippet Manager",
+            "description": "Developer tool for organizing, searching, and sharing code snippets with syntax highlighting, tags, and team collaboration features. Built with modern React patterns.",
+            "image": "/assets/images/projects/snippet-manager.jpg",
+            "technologies": ["React", "Firebase", "Monaco Editor", "Algolia", "Material-UI"],
+            "github": "https://github.com/alextanaka/snippet-manager",
+            "demo": "https://snippet-manager-alex.web.app",
+            "category": "Developer Tool",
+            "status": "Completed",
+            "year": 2023,
+            "duration": "2 months",
+            "teamSize": 1,
+            "role": "Full Stack Developer",
+            "highlights": [
+                "Syntax highlighting for 20+ languages",
+                "Real-time search with Algolia",
+                "Team sharing and collaboration",
+                "Export to GitHub Gist"
+            ],
+            "japanese": {
+                "title": "コードスニペット管理",
+                "description": "シンタックスハイライト、タグ、チーム協力機能を備えたコードスニペット整理・検索・共有ツール。",
+                "role": "フルスタック開発者"
+            }
+        },
+        {
+            "id": 6,
+            "title": "Personal Finance Tracker",
+            "description": "Comprehensive personal finance management app with expense tracking, budget planning, investment monitoring, and financial goal setting. Features beautiful charts and insights.",
+            "image": "/assets/images/projects/finance-tracker.jpg",
+            "technologies": ["Vue.js", "Node.js", "MongoDB", "Plaid API", "Chart.js"],
+            "github": "https://github.com/alextanaka/finance-tracker",
+            "demo": "https://finance-tracker-demo.herokuapp.com",
+            "category": "Web Application",
+            "status": "In Progress",
+            "year": 2024,
+            "duration": "2 months (ongoing)",
+            "teamSize": 1,
+            "role": "Full Stack Developer",
+            "highlights": [
+                "Bank account integration with Plaid",
+                "Automated expense categorization",
+                "Interactive financial charts",
+                "Goal tracking and notifications"
+            ],
+            "japanese": {
+                "title": "個人財務管理",
+                "description": "支出追跡、予算計画、投資監視、財務目標設定を備えた包括的な個人財務管理アプリ。",
+                "role": "フルスタック開発者"
+            }
+        },
+        {
+            "id": 7,
+            "title": "Recipe Sharing Platform",
+            "description": "Social platform for food enthusiasts to share recipes, cooking tips, and culinary experiences. Features include recipe scaling, meal planning, and ingredient shopping lists.",
+            "image": "/assets/images/projects/recipe-platform.jpg",
+            "technologies": ["React", "GraphQL", "Apollo", "PostgreSQL", "Cloudinary"],
+            "github": "https://github.com/alextanaka/recipe-platform",
+            "demo": "https://recipe-sharing-alex.vercel.app",
+            "category": "Social Platform",
+            "status": "Completed",
+            "year": 2023,
+            "duration": "3 months",
+            "teamSize": 2,
+            "role": "Frontend Lead",
+            "highlights": [
+                "Image upload and optimization",
+                "Recipe scaling algorithm",
+                "Social features (likes, comments, follows)",
+                "Meal planning calendar"
+            ],
+            "japanese": {
+                "title": "レシピ共有プラットフォーム",
+                "description": "レシピ、料理のコツ、料理体験を共有する食愛好家向けソーシャルプラットフォーム。",
+                "role": "フロントエンドリード"
+            }
+        },
+        {
+            "id": 8,
+            "title": "Real Estate Analytics",
+            "description": "Data visualization dashboard for real estate market analysis with interactive maps, price trends, and market predictions using machine learning algorithms.",
+            "image": "/assets/images/projects/real-estate.jpg",
+            "technologies": ["Python", "Django", "D3.js", "PostgreSQL", "Mapbox", "Scikit-learn"],
+            "github": "https://github.com/alextanaka/real-estate-analytics",
+            "demo": "https://real-estate-analytics.herokuapp.com",
+            "category": "Data Visualization",
+            "status": "Completed",
+            "year": 2023,
+            "duration": "4 months",
+            "teamSize": 3,
+            "role": "Data Engineer",
+            "highlights": [
+                "Interactive map visualizations",
+                "Machine learning price predictions",
+                "Real-time market data integration",
+                "Comprehensive analytics dashboard"
+            ],
+            "japanese": {
+                "title": "不動産分析",
+                "description": "インタラクティブマップ、価格トレンド、機械学習を使用した市場予測を備えた不動産市場分析ダッシュボード。",
+                "role": "データエンジニア"
+            }
+        }
+    ],
+    "categories": [{
+            "name": "Web Application",
+            "count": 5,
+            "color": "from-blue-500 to-cyan-500",
+            "japanese": "Webアプリケーション"
+        },
+        {
+            "name": "Mobile App",
+            "count": 1,
+            "color": "from-green-500 to-emerald-500",
+            "japanese": "モバイルアプリ"
+        },
+        {
+            "name": "Developer Tool",
+            "count": 1,
+            "color": "from-purple-500 to-indigo-500",
+            "japanese": "開発ツール"
+        },
+        {
+            "name": "Social Platform",
+            "count": 1,
+            "color": "from-pink-500 to-rose-500",
+            "japanese": "ソーシャルプラットフォーム"
+        },
+        {
+            "name": "Data Visualization",
+            "count": 1,
+            "color": "from-orange-500 to-red-500",
+            "japanese": "データ可視化"
+        }
+    ],
+    "technologies": {
+        "frontend": ["React", "Vue.js", "Next.js", "TypeScript", "Tailwind CSS"],
+        "backend": ["Node.js", "Python", "Django", "PostgreSQL", "MongoDB"],
+        "mobile": ["React Native", "Expo"],
+        "cloud": ["AWS", "Vercel", "Netlify", "Firebase"],
+        "tools": ["Docker", "Git", "GraphQL", "tRPC"]
+    },
+    "stats": {
+        "totalProjects": 8,
+        "completedProjects": 7,
+        "inProgressProjects": 1,
+        "totalStars": 45,
+        "totalForks": 12,
+        "linesOfCode": "50,000+",
+        "japanese": {
+            "totalProjects": "総プロジェクト数",
+            "completedProjects": "完了プロジェクト",
+            "inProgressProjects": "進行中プロジェクト"
+        }
+    }
+}

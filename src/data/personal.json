@@ -1,0 +1,160 @@
+{
+    "name": "Alex Tanaka",
+    "title": "Full Stack Developer",
+    "bio": "Passionate developer creating digital experiences that bridge technology and human connection. I specialize in modern web applications with a focus on user experience and performance.",
+    "location": "Tokyo, Japan",
+    "email": "alex.tanaka@example.com",
+    "phone": "+81-90-1234-5678",
+    "website": "https://alextanaka.dev",
+    "avatar": "/assets/images/profile/avatar.jpg",
+    "resume": "/assets/files/resume.pdf",
+    "languages": ["JavaScript", "TypeScript", "Python", "Japanese", "English"],
+    "availability": "Open to Work",
+    "timezone": "Asia/Tokyo",
+    "yearsOfExperience": 3,
+    "projectsCompleted": 50,
+    "happyClients": 25,
+    "japanese": {
+        "name": "田中アレックス",
+        "title": "フルスタック開発者",
+        "bio": "技術と人間のつながりを架け橋するデジタル体験を創造する情熱的な開発者です。ユーザーエクスペリエンスとパフォーマンスに焦点を当てたモダンなWebアプリケーションを専門としています。",
+        "location": "東京、日本",
+        "availability": "転職活動中",
+        "greeting": "こんにちは！"
+    },
+    "personality": {
+        "traits": ["Creative", "Detail-oriented", "Collaborative", "Problem Solver"],
+        "workStyle": "I believe in clean code, continuous learning, and building products that make a real impact.",
+        "motivation": "Driven by the desire to create technology that enhances people's daily lives.",
+        "japanese": {
+            "traits": ["クリエイティブ", "細部へのこだわり", "協調性", "問題解決能力"],
+            "workStyle": "クリーンなコード、継続的な学習、そして実際の影響を与える製品の構築を信念としています。",
+            "motivation": "人々の日常生活を向上させる技術を創造したいという願いに突き動かされています。"
+        }
+    },
+    "interests": [{
+            "name": "Photography",
+            "emoji": "📸",
+            "japanese": "写真撮影",
+            "description": "Capturing moments and exploring creative perspectives"
+        },
+        {
+            "name": "Travel",
+            "emoji": "✈️",
+            "japanese": "旅行",
+            "description": "Exploring new cultures and gaining fresh inspiration"
+        },
+        {
+            "name": "Music Production",
+            "emoji": "🎵",
+            "japanese": "音楽制作",
+            "description": "Creating electronic music and sound design"
+        },
+        {
+            "name": "Gaming",
+            "emoji": "🎮",
+            "japanese": "ゲーム",
+            "description": "Strategy games and indie titles"
+        },
+        {
+            "name": "Cooking",
+            "emoji": "🍳",
+            "japanese": "料理",
+            "description": "Experimenting with fusion cuisine"
+        },
+        {
+            "name": "Reading",
+            "emoji": "📚",
+            "japanese": "読書",
+            "description": "Tech blogs, sci-fi novels, and philosophy"
+        }
+    ],
+    "values": [{
+            "title": "Quality First",
+            "description": "I believe in delivering excellence in every line of code, prioritizing maintainable and scalable solutions.",
+            "icon": "⭐",
+            "japanese": {
+                "title": "品質第一",
+                "description": "すべてのコード行において卓越性を提供し、保守可能でスケーラブルなソリューションを優先しています。"
+            }
+        },
+        {
+            "title": "Continuous Learning",
+            "description": "The tech world evolves rapidly, and I embrace change by constantly learning and adapting to new technologies.",
+            "icon": "📚",
+            "japanese": {
+                "title": "継続的学習",
+                "description": "技術の世界は急速に進歩しており、新しい技術を常に学び適応することで変化を受け入れています。"
+            }
+        },
+        {
+            "title": "User-Centric Design",
+            "description": "Every decision should ultimately benefit the end user and enhance their experience.",
+            "icon": "👥",
+            "japanese": {
+                "title": "ユーザー中心設計",
+                "description": "すべての決定は最終的にエンドユーザーに利益をもたらし、彼らの体験を向上させるべきです。"
+            }
+        },
+        {
+            "title": "Collaboration",
+            "description": "The best solutions come from diverse teams working together towards a common goal.",
+            "icon": "🤝",
+            "japanese": {
+                "title": "協働",
+                "description": "最良のソリューションは、共通の目標に向かって協力する多様なチームから生まれます。"
+            }
+        }
+    ],
+    "currentFocus": [
+        "React 18 & Next.js 13",
+        "TypeScript Development",
+        "Cloud Architecture",
+        "Mobile-First Design",
+        "Performance Optimization"
+    ],
+    "funFacts": [{
+            "fact": "Speaks 3 languages fluently",
+            "japanese": "3ヶ国語を流暢に話します"
+        },
+        {
+            "fact": "Has visited 15+ countries",
+            "japanese": "15ヶ国以上を訪問済み"
+        },
+        {
+            "fact": "Coffee enthusiast (drinks 4+ cups daily)",
+            "japanese": "コーヒー愛好家（1日4杯以上）"
+        },
+        {
+            "fact": "Maintains a 500+ day GitHub streak",
+            "japanese": "GitHub500日以上連続コミット"
+        },
+        {
+            "fact": "Volunteers at local coding bootcamps",
+            "japanese": "地元のプログラミングスクールでボランティア"
+        }
+    ],
+    "workingHours": {
+        "timezone": "JST",
+        "available": "9:00 AM - 6:00 PM",
+        "responseTime": "Within 2 hours",
+        "japanese": {
+            "available": "午前9時 - 午後6時",
+            "responseTime": "2時間以内"
+        }
+    },
+    "preferences": {
+        "workEnvironment": "Remote-first with occasional office visits",
+        "teamSize": "Small to medium teams (3-8 people)",
+        "projectTypes": ["Web Applications", "Mobile Apps", "E-commerce", "SaaS"],
+        "technologies": {
+            "favorites": ["React", "Node.js", "TypeScript", "PostgreSQL"],
+            "learning": ["Rust", "Go", "WebAssembly", "Three.js"],
+            "avoid": ["Legacy PHP", "jQuery"]
+        },
+        "japanese": {
+            "workEnvironment": "リモートワーク中心、時々オフィス出社",
+            "teamSize": "小〜中規模チーム（3-8人）"
+        }
+    }
+}

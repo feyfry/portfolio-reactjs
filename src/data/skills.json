@@ -1,0 +1,401 @@
+{
+    "technical": [{
+            "category": "Frontend",
+            "skills": [{
+                    "name": "React.js",
+                    "level": 95,
+                    "icon": "⚛️",
+                    "experience": "3+ years",
+                    "description": "Advanced React patterns, hooks, context, and performance optimization",
+                    "projects": ["EcoCommerce", "TaskFlow", "Weather Dashboard"],
+                    "japanese": "リアクト"
+                },
+                {
+                    "name": "JavaScript",
+                    "level": 92,
+                    "icon": "🟨",
+                    "experience": "4+ years",
+                    "description": "ES6+, async/await, functional programming, and modern JS patterns",
+                    "projects": ["All Projects"],
+                    "japanese": "ジャバスクリプト"
+                },
+                {
+                    "name": "TypeScript",
+                    "level": 88,
+                    "icon": "🔷",
+                    "experience": "2+ years",
+                    "description": "Type safety, generics, advanced types, and large-scale application development",
+                    "projects": ["TaskFlow", "MoodTracker"],
+                    "japanese": "タイプスクリプト"
+                },
+                {
+                    "name": "Next.js",
+                    "level": 85,
+                    "icon": "▲",
+                    "experience": "2+ years",
+                    "description": "SSR, SSG, API routes, and full-stack development with Next.js",
+                    "projects": ["TaskFlow"],
+                    "japanese": "ネクスト.js"
+                },
+                {
+                    "name": "Vue.js",
+                    "level": 78,
+                    "icon": "💚",
+                    "experience": "1+ year",
+                    "description": "Composition API, Vuex/Pinia, and component-based architecture",
+                    "projects": ["Finance Tracker"],
+                    "japanese": "ビュー.js"
+                },
+                {
+                    "name": "CSS/SCSS",
+                    "level": 90,
+                    "icon": "🎨",
+                    "experience": "4+ years",
+                    "description": "Advanced layouts, animations, responsive design, and CSS-in-JS",
+                    "projects": ["All Projects"],
+                    "japanese": "CSS/SCSS"
+                },
+                {
+                    "name": "Tailwind CSS",
+                    "level": 93,
+                    "icon": "🌊",
+                    "experience": "2+ years",
+                    "description": "Utility-first CSS, custom configurations, and component libraries",
+                    "projects": ["TaskFlow", "EcoCommerce"],
+                    "japanese": "テイルウインドCSS"
+                },
+                {
+                    "name": "Framer Motion",
+                    "level": 82,
+                    "icon": "🎭",
+                    "experience": "1+ year",
+                    "description": "Complex animations, gestures, and smooth page transitions",
+                    "projects": ["Portfolio", "Weather Dashboard"],
+                    "japanese": "フレーマーモーション"
+                }
+            ]
+        },
+        {
+            "category": "Backend",
+            "skills": [{
+                    "name": "Node.js",
+                    "level": 87,
+                    "icon": "🟢",
+                    "experience": "3+ years",
+                    "description": "Express.js, RESTful APIs, middleware, and server-side JavaScript",
+                    "projects": ["EcoCommerce", "Recipe Platform"],
+                    "japanese": "ノード.js"
+                },
+                {
+                    "name": "Python",
+                    "level": 83,
+                    "icon": "🐍",
+                    "experience": "2+ years",
+                    "description": "Django, Flask, data processing, and machine learning integration",
+                    "projects": ["Real Estate Analytics"],
+                    "japanese": "パイソン"
+                },
+                {
+                    "name": "PostgreSQL",
+                    "level": 80,
+                    "icon": "🐘",
+                    "experience": "2+ years",
+                    "description": "Complex queries, indexing, performance optimization, and database design",
+                    "projects": ["EcoCommerce", "Recipe Platform"],
+                    "japanese": "ポストグレSQL"
+                },
+                {
+                    "name": "MongoDB",
+                    "level": 75,
+                    "icon": "🍃",
+                    "experience": "2+ years",
+                    "description": "NoSQL database design, aggregation pipelines, and document modeling",
+                    "projects": ["Finance Tracker"],
+                    "japanese": "モンゴDB"
+                },
+                {
+                    "name": "GraphQL",
+                    "level": 78,
+                    "icon": "🔗",
+                    "experience": "1+ year",
+                    "description": "Schema design, resolvers, Apollo Server, and client-side integration",
+                    "projects": ["Recipe Platform"],
+                    "japanese": "グラフQL"
+                },
+                {
+                    "name": "REST APIs",
+                    "level": 90,
+                    "icon": "🔌",
+                    "experience": "3+ years",
+                    "description": "API design, authentication, rate limiting, and documentation",
+                    "projects": ["Most Projects"],
+                    "japanese": "REST API"
+                },
+                {
+                    "name": "Firebase",
+                    "level": 82,
+                    "icon": "🔥",
+                    "experience": "2+ years",
+                    "description": "Firestore, Authentication, Cloud Functions, and real-time features",
+                    "projects": ["Snippet Manager"],
+                    "japanese": "ファイアベース"
+                }
+            ]
+        },
+        {
+            "category": "Mobile",
+            "skills": [{
+                    "name": "React Native",
+                    "level": 85,
+                    "icon": "📱",
+                    "experience": "1+ year",
+                    "description": "Cross-platform development, native modules, and app store deployment",
+                    "projects": ["MoodTracker"],
+                    "japanese": "リアクトネイティブ"
+                },
+                {
+                    "name": "Expo",
+                    "level": 80,
+                    "icon": "⚡",
+                    "experience": "1+ year",
+                    "description": "Managed workflow, OTA updates, and development tools",
+                    "projects": ["MoodTracker"],
+                    "japanese": "エキスポ"
+                },
+                {
+                    "name": "iOS Development",
+                    "level": 65,
+                    "icon": "🍎",
+                    "experience": "6 months",
+                    "description": "Swift basics, UIKit, and iOS-specific optimizations",
+                    "projects": ["Learning Projects"],
+                    "japanese": "iOS開発"
+                },
+                {
+                    "name": "Android Development",
+                    "level": 60,
+                    "icon": "🤖",
+                    "experience": "6 months",
+                    "description": "Kotlin basics, Android Studio, and platform-specific features",
+                    "projects": ["Learning Projects"],
+                    "japanese": "Android開発"
+                }
+            ]
+        },
+        {
+            "category": "DevOps",
+            "skills": [{
+                    "name": "Docker",
+                    "level": 75,
+                    "icon": "🐳",
+                    "experience": "1+ year",
+                    "description": "Containerization, Docker Compose, and deployment strategies",
+                    "projects": ["EcoCommerce"],
+                    "japanese": "ドッカー"
+                },
+                {
+                    "name": "AWS",
+                    "level": 70,
+                    "icon": "☁️",
+                    "experience": "1+ year",
+                    "description": "EC2, S3, Lambda, RDS, and basic cloud architecture",
+                    "projects": ["EcoCommerce"],
+                    "japanese": "AWS"
+                },
+                {
+                    "name": "Vercel",
+                    "level": 88,
+                    "icon": "▲",
+                    "experience": "2+ years",
+                    "description": "Serverless deployment, edge functions, and performance optimization",
+                    "projects": ["TaskFlow", "Recipe Platform"],
+                    "japanese": "バーセル"
+                },
+                {
+                    "name": "Netlify",
+                    "level": 85,
+                    "icon": "🌐",
+                    "experience": "2+ years",
+                    "description": "Static site deployment, form handling, and edge functions",
+                    "projects": ["Weather Dashboard"],
+                    "japanese": "ネットリファイ"
+                },
+                {
+                    "name": "Git",
+                    "level": 92,
+                    "icon": "📝",
+                    "experience": "4+ years",
+                    "description": "Version control, branching strategies, and collaborative workflows",
+                    "projects": ["All Projects"],
+                    "japanese": "ギット"
+                },
+                {
+                    "name": "CI/CD",
+                    "level": 72,
+                    "icon": "🔄",
+                    "experience": "1+ year",
+                    "description": "GitHub Actions, automated testing, and deployment pipelines",
+                    "projects": ["Recent Projects"],
+                    "japanese": "CI/CD"
+                }
+            ]
+        },
+        {
+            "category": "Design & Tools",
+            "skills": [{
+                    "name": "Figma",
+                    "level": 78,
+                    "icon": "🎨",
+                    "experience": "2+ years",
+                    "description": "UI/UX design, prototyping, and design system creation",
+                    "projects": ["All Projects"],
+                    "japanese": "フィグマ"
+                },
+                {
+                    "name": "Adobe Creative Suite",
+                    "level": 70,
+                    "icon": "🎭",
+                    "experience": "2+ years",
+                    "description": "Photoshop, Illustrator, and basic graphic design",
+                    "projects": ["Design Work"],
+                    "japanese": "アドビ"
+                },
+                {
+                    "name": "Notion",
+                    "level": 85,
+                    "icon": "📋",
+                    "experience": "2+ years",
+                    "description": "Project management, documentation, and team collaboration",
+                    "projects": ["All Projects"],
+                    "japanese": "ノーション"
+                },
+                {
+                    "name": "VS Code",
+                    "level": 95,
+                    "icon": "💻",
+                    "experience": "4+ years",
+                    "description": "Advanced configurations, extensions, and productivity workflows",
+                    "projects": ["All Projects"],
+                    "japanese": "VSコード"
+                }
+            ]
+        }
+    ],
+    "soft": [
+        "Problem Solving",
+        "Team Collaboration",
+        "Project Management",
+        "Communication",
+        "Continuous Learning",
+        "Adaptability",
+        "Critical Thinking",
+        "Time Management",
+        "Leadership",
+        "Mentoring"
+    ],
+    "languages": [{
+            "name": "English",
+            "level": "Native",
+            "proficiency": 100,
+            "japanese": "英語"
+        },
+        {
+            "name": "Japanese",
+            "level": "Fluent",
+            "proficiency": 90,
+            "japanese": "日本語"
+        },
+        {
+            "name": "Spanish",
+            "level": "Conversational",
+            "proficiency": 65,
+            "japanese": "スペイン語"
+        }
+    ],
+    "certifications": [{
+            "name": "AWS Certified Developer - Associate",
+            "issuer": "Amazon Web Services",
+            "date": "2023",
+            "credentialId": "AWS-DA-12345",
+            "japanese": "AWS認定開発者 - アソシエイト"
+        },
+        {
+            "name": "React Developer Certification",
+            "issuer": "Meta",
+            "date": "2023",
+            "credentialId": "META-REACT-67890",
+            "japanese": "React開発者認定"
+        },
+        {
+            "name": "Google Analytics Certified",
+            "issuer": "Google",
+            "date": "2022",
+            "credentialId": "GA-CERT-11111",
+            "japanese": "Googleアナリティクス認定"
+        },
+        {
+            "name": "Scrum Master Certified",
+            "issuer": "Scrum Alliance",
+            "date": "2023",
+            "credentialId": "CSM-22222",
+            "japanese": "スクラムマスター認定"
+        }
+    ],
+    "learning": [{
+            "name": "Rust",
+            "progress": 30,
+            "reason": "Systems programming and WebAssembly",
+            "japanese": "ラスト"
+        },
+        {
+            "name": "Go",
+            "progress": 25,
+            "reason": "Backend microservices and performance",
+            "japanese": "Go言語"
+        },
+        {
+            "name": "Three.js",
+            "progress": 40,
+            "reason": "3D web experiences and WebGL",
+            "japanese": "Three.js"
+        },
+        {
+            "name": "Machine Learning",
+            "progress": 35,
+            "reason": "AI integration and data analysis",
+            "japanese": "機械学習"
+        },
+        {
+            "name": "Blockchain",
+            "progress": 20,
+            "reason": "Web3 and decentralized applications",
+            "japanese": "ブロックチェーン"
+        }
+    ],
+    "skillLevels": {
+        "beginner": {
+            "range": "0-40",
+            "description": "Learning fundamentals",
+            "color": "text-orange-400",
+            "japanese": "初級"
+        },
+        "intermediate": {
+            "range": "41-70",
+            "description": "Comfortable with basics",
+            "color": "text-yellow-400",
+            "japanese": "中級"
+        },
+        "advanced": {
+            "range": "71-89",
+            "description": "Proficient and confident",
+            "color": "text-blue-400",
+            "japanese": "上級"
+        },
+        "expert": {
+            "range": "90-100",
+            "description": "Deep expertise and mastery",
+            "color": "text-green-400",
+            "japanese": "エキスパート"
+        }
+    }
+}

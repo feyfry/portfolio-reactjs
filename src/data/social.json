@@ -1,0 +1,279 @@
+{
+    "links": [{
+            "name": "GitHub",
+            "url": "https://github.com/alextanaka",
+            "icon": "github",
+            "color": "#333333",
+            "description": "Open source projects and code repositories",
+            "stats": {
+                "followers": 245,
+                "repositories": 28,
+                "stars": 450
+            },
+            "japanese": {
+                "name": "ギットハブ",
+                "description": "オープンソースプロジェクトとコードリポジトリ"
+            }
+        },
+        {
+            "name": "LinkedIn",
+            "url": "https://linkedin.com/in/alex-tanaka-dev",
+            "icon": "linkedin",
+            "color": "#0077b5",
+            "description": "Professional network and career updates",
+            "stats": {
+                "connections": 500,
+                "posts": 45,
+                "articles": 12
+            },
+            "japanese": {
+                "name": "リンクトイン",
+                "description": "プロフェッショナルネットワークとキャリア情報"
+            }
+        },
+        {
+            "name": "Twitter",
+            "url": "https://twitter.com/alextanaka_dev",
+            "icon": "twitter",
+            "color": "#1da1f2",
+            "description": "Tech thoughts, project updates, and community engagement",
+            "stats": {
+                "followers": 1200,
+                "tweets": 890,
+                "likes": 3500
+            },
+            "japanese": {
+                "name": "ツイッター",
+                "description": "技術的思考、プロジェクト更新、コミュニティ参加"
+            }
+        },
+        {
+            "name": "Email",
+            "url": "mailto:alex.tanaka@example.com",
+            "icon": "mail",
+            "color": "#ea4335",
+            "description": "Direct contact for business inquiries",
+            "responseTime": "Within 24 hours",
+            "japanese": {
+                "name": "メール",
+                "description": "ビジネスに関するお問い合わせの直接連絡先"
+            }
+        },
+        {
+            "name": "Instagram",
+            "url": "https://instagram.com/alextanaka.codes",
+            "icon": "instagram",
+            "color": "#e1306c",
+            "description": "Behind the scenes, travel, and lifestyle content",
+            "stats": {
+                "followers": 800,
+                "posts": 156,
+                "stories": "Weekly"
+            },
+            "japanese": {
+                "name": "インスタグラム",
+                "description": "舞台裏、旅行、ライフスタイルコンテンツ"
+            }
+        },
+        {
+            "name": "YouTube",
+            "url": "https://youtube.com/@alextanaka-dev",
+            "icon": "youtube",
+            "color": "#ff0000",
+            "description": "Coding tutorials and tech reviews",
+            "stats": {
+                "subscribers": 2500,
+                "videos": 45,
+                "views": "50K+"
+            },
+            "japanese": {
+                "name": "ユーチューブ",
+                "description": "コーディングチュートリアルと技術レビュー"
+            }
+        },
+        {
+            "name": "Dev.to",
+            "url": "https://dev.to/alextanaka",
+            "icon": "pen-tool",
+            "color": "#0a0a0a",
+            "description": "Technical articles and programming insights",
+            "stats": {
+                "followers": 350,
+                "articles": 23,
+                "reactions": 1200
+            },
+            "japanese": {
+                "name": "Dev.to",
+                "description": "技術記事とプログラミングの洞察"
+            }
+        },
+        {
+            "name": "Medium",
+            "url": "https://medium.com/@alextanaka",
+            "icon": "edit",
+            "color": "#00ab6c",
+            "description": "In-depth technical writing and career insights",
+            "stats": {
+                "followers": 180,
+                "articles": 8,
+                "claps": 500
+            },
+            "japanese": {
+                "name": "ミディアム",
+                "description": "詳細な技術記事とキャリアの洞察"
+            }
+        },
+        {
+            "name": "Discord",
+            "url": "https://discord.gg/alextanaka",
+            "icon": "message-circle",
+            "color": "#5865f2",
+            "description": "Join my coding community and live discussions",
+            "stats": {
+                "members": 450,
+                "channels": 8,
+                "activity": "Daily"
+            },
+            "japanese": {
+                "name": "ディスコード",
+                "description": "コーディングコミュニティとライブディスカッションに参加"
+            }
+        },
+        {
+            "name": "Twitch",
+            "url": "https://twitch.tv/alextanaka_codes",
+            "icon": "tv",
+            "color": "#9146ff",
+            "description": "Live coding streams and tech talks",
+            "stats": {
+                "followers": 320,
+                "streams": 25,
+                "avgViewers": 45
+            },
+            "schedule": "Saturdays 2PM JST",
+            "japanese": {
+                "name": "ツイッチ",
+                "description": "ライブコーディング配信と技術講演"
+            }
+        }
+    ],
+    "primary": ["github", "linkedin", "email", "twitter"],
+    "professional": ["github", "linkedin", "dev.to", "medium", "email"],
+    "social": ["twitter", "instagram", "youtube", "discord"],
+    "content": ["youtube", "dev.to", "medium", "twitch"],
+    "messaging": ["email", "discord", "twitter"],
+    "preferences": {
+        "businessInquiries": "email",
+        "collaborations": "linkedin",
+        "casualChat": "discord",
+        "contentFeedback": "twitter",
+        "japanese": {
+            "businessInquiries": "ビジネスに関するお問い合わせ",
+            "collaborations": "コラボレーション",
+            "casualChat": "カジュアルチャット",
+            "contentFeedback": "コンテンツフィードバック"
+        }
+    },
+    "availability": {
+        "email": {
+            "responseTime": "24 hours",
+            "bestTime": "9 AM - 6 PM JST",
+            "japanese": "24時間以内に返信"
+        },
+        "discord": {
+            "responseTime": "2-4 hours",
+            "bestTime": "Evening JST",
+            "japanese": "2-4時間以内に返信"
+        },
+        "twitter": {
+            "responseTime": "1-2 hours",
+            "bestTime": "Throughout the day",
+            "japanese": "1-2時間以内に返信"
+        },
+        "linkedin": {
+            "responseTime": "48 hours",
+            "bestTime": "Weekdays",
+            "japanese": "48時間以内に返信"
+        }
+    },
+    "contentSchedule": {
+        "youtube": {
+            "frequency": "Bi-weekly",
+            "day": "Sundays",
+            "time": "10 AM JST",
+            "japanese": "隔週日曜日午前10時"
+        },
+        "blog": {
+            "frequency": "Weekly",
+            "platform": "Dev.to & Medium",
+            "day": "Wednesdays",
+            "japanese": "毎週水曜日"
+        },
+        "twitter": {
+            "frequency": "Daily",
+            "type": "Updates, tips, thoughts",
+            "japanese": "毎日更新、ヒント、考え"
+        },
+        "instagram": {
+            "frequency": "3-4 times per week",
+            "type": "Stories, posts, behind-the-scenes",
+            "japanese": "週3-4回、ストーリー、投稿、舞台裏"
+        },
+        "twitch": {
+            "frequency": "Weekly",
+            "day": "Saturdays",
+            "time": "2 PM JST",
+            "duration": "2-3 hours",
+            "japanese": "毎週土曜日午後2時、2-3時間"
+        }
+    },
+    "communityGuidelines": {
+        "values": [
+            "Respectful and inclusive communication",
+            "Constructive feedback and discussions",
+            "Knowledge sharing and learning",
+            "Supporting fellow developers"
+        ],
+        "languages": ["English", "Japanese"],
+        "topics": [
+            "Web Development",
+            "React/JavaScript",
+            "Career Advice",
+            "Tech Industry",
+            "Programming Best Practices"
+        ],
+        "japanese": {
+            "values": [
+                "敬意と包括的なコミュニケーション",
+                "建設的なフィードバックと議論",
+                "知識の共有と学習",
+                "仲間の開発者のサポート"
+            ],
+            "topics": [
+                "Web開発",
+                "React/JavaScript",
+                "キャリアアドバイス",
+                "技術業界",
+                "プログラミングのベストプラクティス"
+            ]
+        }
+    },
+    "analytics": {
+        "totalFollowers": 6045,
+        "totalConnections": 500,
+        "contentViews": "75K+",
+        "engagementRate": "4.2%",
+        "growthRate": "+15% monthly",
+        "topPerformingContent": [
+            "React Performance Tips",
+            "Junior Developer Career Guide",
+            "JavaScript ES2024 Features"
+        ],
+        "japanese": {
+            "totalFollowers": "総フォロワー数",
+            "contentViews": "コンテンツ視聴数",
+            "engagementRate": "エンゲージメント率",
+            "growthRate": "月次成長率"
+        }
+    }
+}

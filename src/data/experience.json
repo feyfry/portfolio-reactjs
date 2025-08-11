@@ -1,0 +1,269 @@
+{
+    "work": [{
+            "id": 1,
+            "company": "TechVision Solutions",
+            "position": "Senior Frontend Developer",
+            "location": "Tokyo, Japan",
+            "startDate": "2023-01",
+            "endDate": "Present",
+            "description": "Lead frontend development for enterprise web applications serving 100K+ users. Specialize in React ecosystem, performance optimization, and modern development practices.",
+            "achievements": [
+                "Improved application performance by 45% through code splitting and lazy loading",
+                "Led a team of 4 junior developers and established best practices",
+                "Implemented comprehensive testing strategy reducing bugs by 60%",
+                "Architected reusable component library used across 5+ projects",
+                "Mentored 3 interns who were successfully hired as full-time developers"
+            ],
+            "technologies": ["React", "TypeScript", "Next.js", "Tailwind CSS", "GraphQL", "Jest", "Cypress"],
+            "responsibilities": [
+                "Design and implement user interfaces for web applications",
+                "Collaborate with UX/UI designers to translate designs into code",
+                "Optimize application performance and user experience",
+                "Code review and mentoring junior developers",
+                "Participate in technical decision making and architecture planning"
+            ],
+            "japanese": {
+                "company": "テックビジョンソリューションズ",
+                "position": "シニアフロントエンド開発者",
+                "location": "東京、日本"
+            }
+        },
+        {
+            "id": 2,
+            "company": "StartupHub Inc.",
+            "position": "Full Stack Developer",
+            "location": "Tokyo, Japan",
+            "startDate": "2021-06",
+            "endDate": "2022-12",
+            "description": "Worked in a fast-paced startup environment developing MVP products and scaling applications. Handled both frontend and backend development with focus on rapid prototyping.",
+            "achievements": [
+                "Built 3 MVP products from concept to production in 6 months",
+                "Reduced server costs by 30% through optimization and cloud migration",
+                "Implemented CI/CD pipeline improving deployment frequency by 5x",
+                "Integrated payment systems processing $100K+ monthly transactions",
+                "Developed real-time chat feature increasing user engagement by 40%"
+            ],
+            "technologies": ["React", "Node.js", "MongoDB", "AWS", "Docker", "Stripe API", "Socket.io"],
+            "responsibilities": [
+                "Full-stack development from database to UI",
+                "API design and backend architecture",
+                "Database design and optimization",
+                "Cloud infrastructure setup and maintenance",
+                "Third-party integrations and payment processing"
+            ],
+            "japanese": {
+                "company": "スタートアップハブ株式会社",
+                "position": "フルスタック開発者",
+                "location": "東京、日本"
+            }
+        },
+        {
+            "id": 3,
+            "company": "Digital Craft Agency",
+            "position": "Frontend Developer",
+            "location": "Osaka, Japan",
+            "startDate": "2020-04",
+            "endDate": "2021-05",
+            "description": "Developed responsive websites and web applications for various clients including e-commerce platforms, corporate websites, and marketing campaigns.",
+            "achievements": [
+                "Delivered 15+ client projects on time and within budget",
+                "Improved client satisfaction scores from 7.2 to 9.1 out of 10",
+                "Reduced development time by 25% through component standardization",
+                "Successfully launched 3 e-commerce platforms generating $500K+ revenue",
+                "Trained 2 new developers on modern frontend technologies"
+            ],
+            "technologies": ["JavaScript", "React", "Vue.js", "SCSS", "Webpack", "WordPress"],
+            "responsibilities": [
+                "Client communication and requirement gathering",
+                "Responsive web design implementation",
+                "Website performance optimization",
+                "Cross-browser compatibility testing",
+                "Client training and support"
+            ],
+            "japanese": {
+                "company": "デジタルクラフトエージェンシー",
+                "position": "フロントエンド開発者",
+                "location": "大阪、日本"
+            }
+        },
+        {
+            "id": 4,
+            "company": "FreelanceConnect",
+            "position": "Junior Web Developer",
+            "location": "Remote",
+            "startDate": "2019-08",
+            "endDate": "2020-03",
+            "description": "Freelance and contract work building websites for small businesses and startups. Gained experience in client communication, project management, and diverse technology stacks.",
+            "achievements": [
+                "Completed 20+ freelance projects with 100% client satisfaction",
+                "Built personal brand resulting in consistent referral work",
+                "Learned 5 new technologies through diverse project requirements",
+                "Established long-term partnerships with 3 recurring clients",
+                "Generated $30K+ revenue in 8 months"
+            ],
+            "technologies": ["HTML", "CSS", "JavaScript", "PHP", "MySQL", "WordPress", "Shopify"],
+            "responsibilities": [
+                "End-to-end website development",
+                "Client consultation and proposal creation",
+                "Project timeline management",
+                "Basic SEO implementation",
+                "Website maintenance and updates"
+            ],
+            "japanese": {
+                "company": "フリーランスコネクト",
+                "position": "ジュニアWeb開発者",
+                "location": "リモート"
+            }
+        }
+    ],
+    "education": [{
+            "id": 1,
+            "institution": "Tokyo University of Technology",
+            "degree": "Bachelor of Science in Computer Science",
+            "location": "Tokyo, Japan",
+            "startDate": "2016-04",
+            "endDate": "2020-03",
+            "gpa": "3.8/4.0",
+            "description": "Comprehensive computer science education with focus on software engineering, algorithms, and system design. Active in programming clubs and hackathons.",
+            "relevant_courses": [
+                "Data Structures & Algorithms",
+                "Software Engineering",
+                "Database Systems",
+                "Web Development",
+                "Computer Networks",
+                "Operating Systems",
+                "Machine Learning",
+                "Human-Computer Interaction"
+            ],
+            "achievements": [
+                "Graduated Summa Cum Laude (top 5% of class)",
+                "Won 1st place in University Hackathon 2019",
+                "President of Programming Club (2018-2019)",
+                "Research assistant for AI/ML projects",
+                "Published paper on web performance optimization"
+            ],
+            "activities": [
+                "Programming Club President",
+                "Hackathon Team Leader",
+                "Peer Tutor for Web Development",
+                "University Website Developer (Part-time)"
+            ],
+            "japanese": {
+                "institution": "東京工科大学",
+                "degree": "コンピュータサイエンス学士",
+                "location": "東京、日本"
+            }
+        },
+        {
+            "id": 2,
+            "institution": "Sakura International High School",
+            "degree": "High School Diploma",
+            "location": "Tokyo, Japan",
+            "startDate": "2013-04",
+            "endDate": "2016-03",
+            "gpa": "3.9/4.0",
+            "description": "International curriculum with strong emphasis on STEM subjects and English proficiency. Active participation in technology and robotics clubs.",
+            "relevant_courses": [
+                "Advanced Mathematics",
+                "Physics",
+                "Computer Programming (Basic)",
+                "English Literature",
+                "Japanese Language & Culture",
+                "Economics"
+            ],
+            "achievements": [
+                "Valedictorian of graduating class",
+                "National Science Fair - 2nd place in Computer Science",
+                "Student Council Technology Committee Chair",
+                "Fluent in English and Japanese",
+                "TOEFL Score: 110/120"
+            ],
+            "activities": [
+                "Robotics Club Captain",
+                "Student Council Member",
+                "Math Olympiad Team",
+                "Volunteer Programming Instructor"
+            ],
+            "japanese": {
+                "institution": "桜インターナショナル高等学校",
+                "degree": "高等学校卒業証書",
+                "location": "東京、日本"
+            }
+        }
+    ],
+    "freelance": [{
+            "id": 1,
+            "project": "E-commerce Platform for Local Artisans",
+            "client": "Craft Collective Tokyo",
+            "duration": "3 months",
+            "year": "2023",
+            "description": "Built custom e-commerce platform for local artisans to sell handmade products online with integrated payment processing and inventory management.",
+            "technologies": ["React", "Node.js", "Stripe", "MongoDB"],
+            "achievements": [
+                "Increased client sales by 200% within first month",
+                "Integrated with local shipping providers",
+                "Built mobile-responsive design"
+            ]
+        },
+        {
+            "id": 2,
+            "project": "Corporate Website Redesign",
+            "client": "Zen Marketing Agency",
+            "duration": "2 months",
+            "year": "2022",
+            "description": "Complete redesign and development of corporate website with focus on performance, SEO, and lead generation.",
+            "technologies": ["Next.js", "Tailwind CSS", "Contentful CMS"],
+            "achievements": [
+                "Improved page load speed by 70%",
+                "Increased organic traffic by 150%",
+                "Generated 50+ new leads in first quarter"
+            ]
+        }
+    ],
+    "volunteering": [{
+            "organization": "Code for Japan",
+            "role": "Volunteer Developer",
+            "duration": "2021 - Present",
+            "description": "Contributing to open-source civic technology projects to solve social issues through technology.",
+            "projects": [
+                "COVID-19 Information Dashboard",
+                "Local Government Digital Services",
+                "Educational Platform for Seniors"
+            ],
+            "japanese": {
+                "organization": "コード・フォー・ジャパン",
+                "role": "ボランティア開発者"
+            }
+        },
+        {
+            "organization": "Girls Who Code Tokyo",
+            "role": "Mentor",
+            "duration": "2022 - Present",
+            "description": "Mentoring young women in programming and technology, conducting workshops on web development basics.",
+            "impact": "Mentored 15+ students with 80% continuing in STEM fields",
+            "japanese": {
+                "organization": "ガールズ・フー・コード東京",
+                "role": "メンター"
+            }
+        }
+    ],
+    "awards": [{
+            "title": "Best Innovation Award",
+            "organization": "Tokyo Tech Hackathon 2023",
+            "year": "2023",
+            "description": "Recognition for AI-powered accessibility tool for visually impaired users"
+        },
+        {
+            "title": "Employee of the Month",
+            "organization": "TechVision Solutions",
+            "year": "2023",
+            "description": "Outstanding performance in Q2 project delivery and team leadership"
+        },
+        {
+            "title": "Open Source Contributor",
+            "organization": "GitHub",
+            "year": "2022",
+            "description": "Top 1% contributor in React ecosystem with 500+ stars across repositories"
+        }
+    ]
+}
