@@ -184,139 +184,141 @@ const SplashScreen = ({
                     </div>
                 )}
 
-                {/* Main Content */}
-                <motion.div
-                    className="text-center relative z-10"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.2 }}
-                >
-                    {/* Logo */}
-                    {logo && (
-                        <motion.div
-                            className="mb-8"
-                            initial={{ scale: 0, opacity: 0 }}
-                            animate={{ scale: 1, opacity: 1 }}
-                            transition={{
-                                duration: 0.8,
-                                delay: 0.3,
-                                type: "spring",
-                                stiffness: 100
-                            }}
-                        >
-                            {typeof logo === 'string' ? (
-                                <img src={logo} alt="Logo" className="w-24 h-24 mx-auto" />
-                            ) : (
-                                logo
-                            )}
-                        </motion.div>
-                    )}
-
-                    {/* Japanese Title */}
+                {/* Main Content Container */}
+                <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
                     <motion.div
-                        className="mb-6"
+                        className="content-spacing-lg"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, delay: 0.4 }}
+                        transition={{ duration: 0.8, delay: 0.2 }}
                     >
-                        <h1 className={`text-4xl md:text-6xl font-light ${themeConfig.text} font-japanese mb-4`}>
-                            {title}
-                        </h1>
-                        <p className={`text-lg md:text-xl ${themeConfig.subtitle} font-japanese`}>
-                            {subtitle}
-                        </p>
-                    </motion.div>
-
-                    {/* English Translation */}
-                    <motion.div
-                        className="mb-8"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ duration: 0.8, delay: 0.6 }}
-                    >
-                        <p className={`text-sm ${themeConfig.accent} uppercase tracking-wider`}>
-                            {englishTitle}
-                        </p>
-                        <p className={`text-xs ${themeConfig.accent} mt-1`}>
-                            {englishSubtitle}
-                        </p>
-                    </motion.div>
-
-                    {/* Animated Kanji */}
-                    <motion.div
-                        className="flex justify-center space-x-4 mb-8"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ delay: 0.8, duration: 1 }}
-                    >
-                        {kanjiArray.map((kanji, index) => (
-                            <motion.span
-                                key={kanji}
-                                className={`text-3xl md:text-4xl ${themeConfig.accent} font-japanese`}
-                                initial={{ rotateY: 180, opacity: 0 }}
-                                animate={{ rotateY: 0, opacity: 1 }}
+                        {/* Logo */}
+                        {logo && (
+                            <motion.div
+                                className="mb-8"
+                                initial={{ scale: 0, opacity: 0 }}
+                                animate={{ scale: 1, opacity: 1 }}
                                 transition={{
-                                    delay: 1 + index * 0.2,
-                                    duration: 0.6,
+                                    duration: 0.8,
+                                    delay: 0.3,
                                     type: "spring",
                                     stiffness: 100
                                 }}
                             >
-                                {kanji}
-                            </motion.span>
-                        ))}
-                    </motion.div>
-
-                    {/* Progress Bar */}
-                    {showProgress && (
-                        <motion.div
-                            className="w-64 md:w-80 mx-auto"
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 1.5, duration: 0.8 }}
-                        >
-                            <div className={`w-full h-1 ${themeConfig.progressBg} rounded-full overflow-hidden mb-4`}>
-                                <motion.div
-                                    className={`h-full bg-gradient-to-r ${themeConfig.progress} rounded-full`}
-                                    initial={{ width: 0 }}
-                                    animate={{ width: `${progress}%` }}
-                                    transition={{ duration: 0.1 }}
-                                />
-                            </div>
-
-                            {/* Progress Text */}
-                            <motion.div
-                                className="flex justify-between items-center"
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
-                                transition={{ delay: 2 }}
-                            >
-                                <span className={`${themeConfig.accent} text-sm font-mono`}>
-                                    {Math.round(progress)}%
-                                </span>
-                                <span className={`${themeConfig.accent} text-sm font-japanese`}>
-                                    {currentPhase === 'complete' ? '完了' : '処理中'}
-                                </span>
-                            </motion.div>
-                        </motion.div>
-                    )}
-
-                    {/* Completion Message */}
-                    <AnimatePresence>
-                        {currentPhase === 'complete' && (
-                            <motion.div
-                                initial={{ opacity: 0, scale: 0.8 }}
-                                animate={{ opacity: 1, scale: 1 }}
-                                exit={{ opacity: 0, scale: 0.8 }}
-                                transition={{ duration: 0.5 }}
-                                className={`mt-6 ${themeConfig.accent}`}
-                            >
-                                <p className="text-lg font-japanese">準備完了！</p>
-                                <p className="text-sm">Ready to begin</p>
+                                {typeof logo === 'string' ? (
+                                    <img src={logo} alt="Logo" className="w-24 h-24 mx-auto" />
+                                ) : (
+                                    logo
+                                )}
                             </motion.div>
                         )}
-                    </AnimatePresence>
-                </motion.div>
+
+                        {/* Japanese Title */}
+                        <motion.div
+                            className="mb-8"
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, delay: 0.4 }}
+                        >
+                            <h1 className={`text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-light ${themeConfig.text} font-japanese mb-4 leading-tight`}>
+                                {title}
+                            </h1>
+                            <p className={`text-lg md:text-xl lg:text-2xl ${themeConfig.subtitle} font-japanese`}>
+                                {subtitle}
+                            </p>
+                        </motion.div>
+
+                        {/* English Translation */}
+                        <motion.div
+                            className="mb-8"
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ duration: 0.8, delay: 0.6 }}
+                        >
+                            <p className={`text-sm md:text-base ${themeConfig.accent} uppercase tracking-wider font-semibold`}>
+                                {englishTitle}
+                            </p>
+                            <p className={`text-xs md:text-sm ${themeConfig.accent} mt-1`}>
+                                {englishSubtitle}
+                            </p>
+                        </motion.div>
+
+                        {/* Animated Kanji */}
+                        <motion.div
+                            className="flex justify-center space-x-4 md:space-x-6 mb-12"
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ delay: 0.8, duration: 1 }}
+                        >
+                            {kanjiArray.map((kanji, index) => (
+                                <motion.span
+                                    key={kanji}
+                                    className={`text-3xl md:text-4xl lg:text-5xl ${themeConfig.accent} font-japanese`}
+                                    initial={{ rotateY: 180, opacity: 0 }}
+                                    animate={{ rotateY: 0, opacity: 1 }}
+                                    transition={{
+                                        delay: 1 + index * 0.2,
+                                        duration: 0.6,
+                                        type: "spring",
+                                        stiffness: 100
+                                    }}
+                                >
+                                    {kanji}
+                                </motion.span>
+                            ))}
+                        </motion.div>
+
+                        {/* Progress Bar */}
+                        {showProgress && (
+                            <motion.div
+                                className="max-w-md mx-auto"
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 1.5, duration: 0.8 }}
+                            >
+                                <div className={`w-full h-1 ${themeConfig.progressBg} rounded-full overflow-hidden mb-6`}>
+                                    <motion.div
+                                        className={`h-full bg-gradient-to-r ${themeConfig.progress} rounded-full`}
+                                        initial={{ width: 0 }}
+                                        animate={{ width: `${progress}%` }}
+                                        transition={{ duration: 0.1 }}
+                                    />
+                                </div>
+
+                                {/* Progress Text */}
+                                <motion.div
+                                    className="flex justify-between items-center text-center"
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    transition={{ delay: 2 }}
+                                >
+                                    <span className={`${themeConfig.accent} text-sm md:text-base font-mono font-semibold`}>
+                                        {Math.round(progress)}%
+                                    </span>
+                                    <span className={`${themeConfig.accent} text-sm md:text-base font-japanese`}>
+                                        {currentPhase === 'complete' ? '完了' : '処理中'}
+                                    </span>
+                                </motion.div>
+                            </motion.div>
+                        )}
+
+                        {/* Completion Message */}
+                        <AnimatePresence>
+                            {currentPhase === 'complete' && (
+                                <motion.div
+                                    initial={{ opacity: 0, scale: 0.8 }}
+                                    animate={{ opacity: 1, scale: 1 }}
+                                    exit={{ opacity: 0, scale: 0.8 }}
+                                    transition={{ duration: 0.5 }}
+                                    className={`mt-8 ${themeConfig.accent}`}
+                                >
+                                    <p className="text-lg md:text-xl font-japanese font-semibold">準備完了！</p>
+                                    <p className="text-sm md:text-base mt-1">Ready to begin</p>
+                                </motion.div>
+                            )}
+                        </AnimatePresence>
+                    </motion.div>
+                </div>
 
                 {/* Exit Animation Overlay */}
                 <AnimatePresence>
@@ -375,13 +377,13 @@ export const SimpleSplash = ({
             transition={{ duration: 0.5 }}
             {...props}
         >
-            <div className="text-center">
+            <div className="text-center max-w-md mx-auto px-6">
                 <motion.div
-                    className="w-12 h-12 border-2 border-purple-500 border-t-transparent rounded-full mx-auto mb-4"
+                    className="w-12 h-12 border-2 border-purple-500 border-t-transparent rounded-full mx-auto mb-6"
                     animate={{ rotate: 360 }}
                     transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
                 />
-                <h2 className="text-xl text-white mb-2">{title}</h2>
+                <h2 className="text-xl md:text-2xl text-white mb-3 font-semibold">{title}</h2>
                 <p className="text-purple-400 font-japanese">{japanese}</p>
             </div>
         </motion.div>
@@ -435,7 +437,7 @@ export const BrandSplash = ({
             transition={{ duration: 0.5 }}
             {...props}
         >
-            <div className="text-center">
+            <div className="text-center max-w-2xl mx-auto px-6">
                 <AnimatePresence mode="wait">
                     {phase === 'logo' && logo && (
                         <motion.div
@@ -461,7 +463,7 @@ export const BrandSplash = ({
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: -20 }}
                             transition={{ duration: 0.6 }}
-                            className="text-4xl md:text-6xl font-bold text-white"
+                            className="text-4xl md:text-6xl lg:text-7xl font-bold text-white"
                         >
                             {brandName}
                         </motion.h1>
@@ -477,7 +479,7 @@ export const BrandSplash = ({
                             className="text-center"
                         >
                             {tagline && (
-                                <p className="text-xl text-gray-300 mb-2">{tagline}</p>
+                                <p className="text-xl md:text-2xl text-gray-300 mb-3">{tagline}</p>
                             )}
                             {japanese && (
                                 <p className="text-purple-400 font-japanese">{japanese}</p>

@@ -36,7 +36,7 @@ const Header = () => {
             }
         }
 
-        window.addEventListener('scroll', handleScroll)
+        window.addEventListener('scroll', handleScroll, { passive: true })
         return () => window.removeEventListener('scroll', handleScroll)
     }, [])
 
@@ -61,21 +61,34 @@ const Header = () => {
         return () => document.removeEventListener('click', handleClickOutside)
     }, [isMobileMenuOpen])
 
+    // Prevent body scroll when mobile menu is open
+    useEffect(() => {
+        if (isMobileMenuOpen) {
+            document.body.style.overflow = 'hidden'
+        } else {
+            document.body.style.overflow = 'unset'
+        }
+
+        return () => {
+            document.body.style.overflow = 'unset'
+        }
+    }, [isMobileMenuOpen])
+
     return (
         <motion.header
             className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${isScrolled
-                    ? 'bg-slate-900/95 backdrop-blur-lg border-b border-slate-700/50 shadow-lg'
-                    : 'bg-transparent'
+                ? 'bg-slate-900/95 backdrop-blur-lg border-b border-slate-700/50 shadow-lg'
+                : 'bg-transparent'
                 }`}
             initial={{ y: -100 }}
             animate={{ y: 0 }}
             transition={{ duration: 0.8 }}
         >
-            <nav className="container mx-auto px-6">
+            <nav className="container-content">
                 <div className="flex items-center justify-between h-16 lg:h-20">
                     {/* Logo */}
                     <motion.div
-                        className="flex items-center space-x-2"
+                        className="flex items-center space-x-3"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                     >
@@ -86,7 +99,7 @@ const Header = () => {
                     </motion.div>
 
                     {/* Desktop Navigation */}
-                    <div className="hidden lg:flex items-center space-x-8">
+                    <div className="hidden lg:flex items-center space-x-2">
                         {navigationItems.map((item) => {
                             const Icon = item.icon
                             return (
@@ -94,8 +107,8 @@ const Header = () => {
                                     key={item.id}
                                     onClick={() => handleNavClick(item.href)}
                                     className={`flex items-center space-x-2 px-4 py-2 rounded-full transition-all duration-300 ${activeSection === item.id
-                                            ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg'
-                                            : 'text-gray-300 hover:text-white hover:bg-slate-800'
+                                        ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg'
+                                        : 'text-gray-300 hover:text-white hover:bg-slate-800'
                                         }`}
                                     whileHover={{ scale: 1.05 }}
                                     whileTap={{ scale: 0.95 }}
@@ -109,9 +122,10 @@ const Header = () => {
 
                     {/* Mobile Menu Button */}
                     <motion.button
-                        className="lg:hidden p-2 rounded-lg bg-slate-800 text-white"
+                        className="lg:hidden p-2 rounded-lg bg-slate-800 text-white hover:bg-slate-700 transition-colors duration-300"
                         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                         whileTap={{ scale: 0.95 }}
+                        aria-label="Toggle mobile menu"
                     >
                         <AnimatePresence mode="wait">
                             {isMobileMenuOpen ? (
@@ -149,27 +163,29 @@ const Header = () => {
                             exit={{ opacity: 0, height: 0 }}
                             transition={{ duration: 0.3 }}
                         >
-                            <div className="px-6 py-4 space-y-2">
-                                {navigationItems.map((item, index) => {
-                                    const Icon = item.icon
-                                    return (
-                                        <motion.button
-                                            key={item.id}
-                                            onClick={() => handleNavClick(item.href)}
-                                            className={`w-full flex items-center space-x-3 px-4 py-3 rounded-lg transition-all duration-300 ${activeSection === item.id
+                            <div className="container-content py-4">
+                                <div className="space-y-2">
+                                    {navigationItems.map((item, index) => {
+                                        const Icon = item.icon
+                                        return (
+                                            <motion.button
+                                                key={item.id}
+                                                onClick={() => handleNavClick(item.href)}
+                                                className={`w-full flex items-center space-x-3 px-4 py-3 rounded-lg transition-all duration-300 ${activeSection === item.id
                                                     ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white'
                                                     : 'text-gray-300 hover:text-white hover:bg-slate-800'
-                                                }`}
-                                            initial={{ opacity: 0, x: -20 }}
-                                            animate={{ opacity: 1, x: 0 }}
-                                            transition={{ duration: 0.3, delay: index * 0.1 }}
-                                            whileTap={{ scale: 0.98 }}
-                                        >
-                                            <Icon size={20} />
-                                            <span className="font-medium">{item.label}</span>
-                                        </motion.button>
-                                    )
-                                })}
+                                                    }`}
+                                                initial={{ opacity: 0, x: -20 }}
+                                                animate={{ opacity: 1, x: 0 }}
+                                                transition={{ duration: 0.3, delay: index * 0.1 }}
+                                                whileTap={{ scale: 0.98 }}
+                                            >
+                                                <Icon size={20} />
+                                                <span className="font-medium text-left">{item.label}</span>
+                                            </motion.button>
+                                        )
+                                    })}
+                                </div>
                             </div>
                         </motion.div>
                     )}
@@ -180,7 +196,7 @@ const Header = () => {
             <motion.div
                 className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-purple-500 to-pink-500"
                 style={{
-                    width: `${((window.scrollY || 0) / (document.documentElement.scrollHeight - window.innerHeight || 1)) * 100}%`
+                    width: `${Math.min(100, Math.max(0, ((window.scrollY || 0) / (Math.max(1, document.documentElement.scrollHeight - window.innerHeight))) * 100))}%`
                 }}
                 initial={{ scaleX: 0 }}
                 animate={{ scaleX: 1 }}

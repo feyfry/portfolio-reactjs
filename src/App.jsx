@@ -95,7 +95,7 @@ function App() {
   }
 
   return (
-    <div className="App min-h-screen bg-slate-900 text-white overflow-x-hidden">
+    <div className="App min-h-screen bg-slate-900 text-white">
       {/* Splash Screen */}
       <AnimatePresence mode="wait">
         {isLoading && (
@@ -122,7 +122,7 @@ function App() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8 }}
-            className="relative"
+            className="relative overflow-x-hidden"
           >
             {/* Background Particles */}
             <div className="fixed inset-0 pointer-events-none z-0">
@@ -143,25 +143,47 @@ function App() {
 
             {/* Main Content */}
             <main className="relative z-10">
-              <FadeIn direction="none" duration={0.8}>
-                {/* Hero Section */}
-                <Hero />
+              {/* Hero Section */}
+              <section id="home" className="hero-section">
+                <FadeIn direction="none" duration={0.8}>
+                  <Hero />
+                </FadeIn>
+              </section>
 
-                {/* About Section */}
-                <About />
+              {/* About Section */}
+              <section id="about" className="section">
+                <FadeIn direction="up" duration={0.8} triggerOnce={true} threshold={0.1}>
+                  <About />
+                </FadeIn>
+              </section>
 
-                {/* Skills Section */}
-                <Skills />
+              {/* Skills Section */}
+              <section id="skills" className="section">
+                <FadeIn direction="up" duration={0.8} triggerOnce={true} threshold={0.1}>
+                  <Skills />
+                </FadeIn>
+              </section>
 
-                {/* Projects Section */}
-                <Projects />
+              {/* Projects Section */}
+              <section id="projects" className="section">
+                <FadeIn direction="up" duration={0.8} triggerOnce={true} threshold={0.1}>
+                  <Projects />
+                </FadeIn>
+              </section>
 
-                {/* Experience Section */}
-                <Experience />
+              {/* Experience Section */}
+              <section id="experience" className="section">
+                <FadeIn direction="up" duration={0.8} triggerOnce={true} threshold={0.1}>
+                  <Experience />
+                </FadeIn>
+              </section>
 
-                {/* Contact Section */}
-                <Contact />
-              </FadeIn>
+              {/* Contact Section */}
+              <section id="contact" className="section">
+                <FadeIn direction="up" duration={0.8} triggerOnce={true} threshold={0.1}>
+                  <Contact />
+                </FadeIn>
+              </section>
             </main>
 
             {/* Footer */}

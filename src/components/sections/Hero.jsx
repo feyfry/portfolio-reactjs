@@ -75,10 +75,7 @@ const Hero = () => {
     }
 
     return (
-        <section
-            id="home"
-            className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-slate-900 via-purple-900/20 to-slate-900"
-        >
+        <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-purple-900/20 to-slate-900">
             {/* Animated Background Elements */}
             <div className="absolute inset-0 overflow-hidden">
                 {/* Grid Pattern */}
@@ -134,177 +131,179 @@ const Hero = () => {
                 />
             </div>
 
-            {/* Main Content */}
-            <div className="container mx-auto px-6 text-center relative z-10">
-                <motion.div
-                    className="max-w-4xl mx-auto"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 1 }}
-                >
-                    {/* Japanese Greeting */}
+            {/* Main Content Container */}
+            <div className="container-content relative z-10">
+                <div className="text-center max-w-5xl mx-auto">
                     <motion.div
-                        className="mb-6"
-                        initial={{ opacity: 0, y: -20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8 }}
-                    >
-                        <span className="text-purple-400 font-japanese text-lg">
-                            こんにちは！ (Hello!)
-                        </span>
-                    </motion.div>
-
-                    {/* Profile Image */}
-                    <motion.div
-                        className="mb-8"
-                        variants={floatingVariants}
-                        initial="initial"
-                        animate="animate"
-                    >
-                        <div className="relative inline-block">
-                            <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full animate-pulse opacity-75" />
-                            <img
-                                src={personalData.avatar}
-                                alt={personalData.name}
-                                className="relative w-32 h-32 md:w-40 md:h-40 rounded-full mx-auto border-4 border-white/20 shadow-2xl object-cover"
-                            />
-                            <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-green-500 rounded-full border-4 border-slate-900 animate-pulse" />
-                        </div>
-                    </motion.div>
-
-                    {/* Name */}
-                    <motion.h1
-                        className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight"
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, delay: 0.4 }}
-                    >
-                        <span className="bg-gradient-to-r from-white via-purple-100 to-pink-100 bg-clip-text text-transparent">
-                            {personalData.name}
-                        </span>
-                    </motion.h1>
-
-                    {/* Typing Animation for Role */}
-                    <motion.div
-                        className="mb-8"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
-                        transition={{ duration: 0.8, delay: 0.6 }}
+                        transition={{ duration: 1 }}
+                        className="content-spacing-lg"
                     >
-                        <div className="text-xl md:text-2xl lg:text-3xl text-purple-300 font-medium min-h-[2.5rem] flex items-center justify-center">
-                            <span className="mr-2">I'm a</span>
-                            <span className="text-transparent bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text">
-                                {displayText}
+                        {/* Japanese Greeting */}
+                        <motion.div
+                            initial={{ opacity: 0, y: -20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8 }}
+                        >
+                            <span className="text-purple-400 font-japanese text-lg md:text-xl">
+                                こんにちは！ (Hello!)
                             </span>
-                            <motion.span
-                                className="inline-block w-0.5 h-8 bg-purple-400 ml-1"
-                                animate={{ opacity: [1, 0, 1] }}
-                                transition={{ duration: 1, repeat: Infinity }}
-                            />
-                        </div>
-                    </motion.div>
+                        </motion.div>
 
-                    {/* Bio */}
-                    <motion.p
-                        className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed mb-12"
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, delay: 0.8 }}
-                    >
-                        {personalData.bio}
-                    </motion.p>
-
-                    {/* Call to Action Buttons */}
-                    <motion.div
-                        className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, delay: 1 }}
-                    >
-                        <motion.button
-                            onClick={handleContactClick}
-                            className="group bg-gradient-to-r from-purple-500 to-pink-500 text-white px-8 py-4 rounded-full font-semibold shadow-lg hover:shadow-2xl transition-all duration-300 flex items-center space-x-2"
-                            whileHover={{ scale: 1.05, y: -2 }}
-                            whileTap={{ scale: 0.95 }}
+                        {/* Profile Image */}
+                        <motion.div
+                            variants={floatingVariants}
+                            initial="initial"
+                            animate="animate"
                         >
-                            <Mail size={20} />
-                            <span>Let's Work Together</span>
-                        </motion.button>
+                            <div className="relative inline-block">
+                                <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full animate-pulse opacity-75" />
+                                <img
+                                    src={personalData.avatar}
+                                    alt={personalData.name}
+                                    className="relative w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 rounded-full mx-auto border-4 border-white/20 shadow-2xl object-cover"
+                                />
+                                <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-green-500 rounded-full border-4 border-slate-900 animate-pulse" />
+                            </div>
+                        </motion.div>
 
-                        <motion.a
-                            href={personalData.resume}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="group border-2 border-purple-400 text-purple-400 px-8 py-4 rounded-full font-semibold hover:bg-purple-400 hover:text-white transition-all duration-300 flex items-center space-x-2"
-                            whileHover={{ scale: 1.05, y: -2 }}
-                            whileTap={{ scale: 0.95 }}
+                        {/* Name */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 30 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, delay: 0.4 }}
                         >
-                            <Download size={20} />
-                            <span>Download Resume</span>
-                        </motion.a>
+                            <h1 className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white leading-tight">
+                                <span className="bg-gradient-to-r from-white via-purple-100 to-pink-100 bg-clip-text text-transparent">
+                                    {personalData.name}
+                                </span>
+                            </h1>
+                        </motion.div>
 
-                        <motion.button
-                            onClick={handlePlayDemo}
-                            className="group border-2 border-slate-500 text-slate-400 px-6 py-4 rounded-full font-semibold hover:bg-slate-500 hover:text-white transition-all duration-300 flex items-center space-x-2"
-                            whileHover={{ scale: 1.05, y: -2 }}
-                            whileTap={{ scale: 0.95 }}
+                        {/* Typing Animation for Role */}
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ duration: 0.8, delay: 0.6 }}
                         >
-                            {isPlaying ? <Pause size={20} /> : <Play size={20} />}
-                            <span>Watch Demo</span>
-                        </motion.button>
-                    </motion.div>
+                            <div className="text-xl md:text-2xl lg:text-3xl xl:text-4xl text-purple-300 font-medium min-h-[3rem] md:min-h-[4rem] flex items-center justify-center">
+                                <span className="mr-2">I'm a</span>
+                                <span className="text-transparent bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text">
+                                    {displayText}
+                                </span>
+                                <motion.span
+                                    className="inline-block w-0.5 h-8 md:h-10 bg-purple-400 ml-1"
+                                    animate={{ opacity: [1, 0, 1] }}
+                                    transition={{ duration: 1, repeat: Infinity }}
+                                />
+                            </div>
+                        </motion.div>
 
-                    {/* Stats */}
-                    <motion.div
-                        className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16"
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, delay: 1.2 }}
-                    >
-                        {[
-                            { number: '50+', label: 'Projects', japanese: 'プロジェクト' },
-                            { number: '3+', label: 'Years', japanese: '年間' },
-                            { number: '100%', label: 'Satisfied', japanese: '満足度' },
-                            { number: '24/7', label: 'Support', japanese: 'サポート' }
-                        ].map((stat, index) => (
-                            <motion.div
-                                key={stat.label}
-                                className="text-center"
-                                initial={{ opacity: 0, scale: 0.8 }}
-                                animate={{ opacity: 1, scale: 1 }}
-                                transition={{ duration: 0.5, delay: 1.3 + index * 0.1 }}
+                        {/* Bio */}
+                        <motion.div
+                            className="max-w-4xl mx-auto"
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, delay: 0.8 }}
+                        >
+                            <p className="text-lg md:text-xl lg:text-2xl text-gray-300 leading-relaxed">
+                                {personalData.bio}
+                            </p>
+                        </motion.div>
+
+                        {/* Call to Action Buttons */}
+                        <motion.div
+                            className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center items-center"
+                            initial={{ opacity: 0, y: 30 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, delay: 1 }}
+                        >
+                            <motion.button
+                                onClick={handleContactClick}
+                                className="group bg-gradient-to-r from-purple-500 to-pink-500 text-white px-8 py-4 md:px-10 md:py-5 rounded-full font-semibold shadow-lg hover:shadow-2xl transition-all duration-300 flex items-center space-x-2 text-lg"
+                                whileHover={{ scale: 1.05, y: -2 }}
+                                whileTap={{ scale: 0.95 }}
                             >
-                                <div className="text-2xl md:text-3xl font-bold text-white mb-2">
-                                    {stat.number}
-                                </div>
-                                <div className="text-gray-400 font-medium">{stat.label}</div>
-                                <div className="text-xs text-purple-400 font-japanese">
-                                    {stat.japanese}
-                                </div>
-                            </motion.div>
-                        ))}
-                    </motion.div>
-                </motion.div>
+                                <Mail size={20} />
+                                <span>Let's Work Together</span>
+                            </motion.button>
 
-                {/* Scroll Indicator */}
-                <motion.div
-                    className="absolute bottom-8 left-1/2 transform -translate-x-1/2 cursor-pointer"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 1.5, duration: 0.8 }}
-                    onClick={scrollToAbout}
-                >
-                    <motion.div
-                        className="flex flex-col items-center space-y-2 text-gray-400 hover:text-purple-400 transition-colors duration-300"
-                        animate={{ y: [0, 10, 0] }}
-                        transition={{ duration: 2, repeat: Infinity }}
-                    >
-                        <span className="text-sm font-medium">Scroll Down</span>
-                        <span className="text-xs font-japanese">下にスクロール</span>
-                        <ChevronDown size={24} />
+                            <motion.a
+                                href={personalData.resume}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="group border-2 border-purple-400 text-purple-400 px-8 py-4 md:px-10 md:py-5 rounded-full font-semibold hover:bg-purple-400 hover:text-white transition-all duration-300 flex items-center space-x-2 text-lg"
+                                whileHover={{ scale: 1.05, y: -2 }}
+                                whileTap={{ scale: 0.95 }}
+                            >
+                                <Download size={20} />
+                                <span>Download Resume</span>
+                            </motion.a>
+
+                            <motion.button
+                                onClick={handlePlayDemo}
+                                className="group border-2 border-slate-500 text-slate-400 px-6 py-4 md:px-8 md:py-5 rounded-full font-semibold hover:bg-slate-500 hover:text-white transition-all duration-300 flex items-center space-x-2"
+                                whileHover={{ scale: 1.05, y: -2 }}
+                                whileTap={{ scale: 0.95 }}
+                            >
+                                {isPlaying ? <Pause size={20} /> : <Play size={20} />}
+                                <span>Watch Demo</span>
+                            </motion.button>
+                        </motion.div>
+
+                        {/* Stats */}
+                        <motion.div
+                            className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 max-w-4xl mx-auto"
+                            initial={{ opacity: 0, y: 30 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, delay: 1.2 }}
+                        >
+                            {[
+                                { number: '50+', label: 'Projects', japanese: 'プロジェクト' },
+                                { number: '3+', label: 'Years', japanese: '年間' },
+                                { number: '100%', label: 'Satisfied', japanese: '満足度' },
+                                { number: '24/7', label: 'Support', japanese: 'サポート' }
+                            ].map((stat, index) => (
+                                <motion.div
+                                    key={stat.label}
+                                    className="text-center"
+                                    initial={{ opacity: 0, scale: 0.8 }}
+                                    animate={{ opacity: 1, scale: 1 }}
+                                    transition={{ duration: 0.5, delay: 1.3 + index * 0.1 }}
+                                >
+                                    <div className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2">
+                                        {stat.number}
+                                    </div>
+                                    <div className="text-gray-400 font-medium text-base md:text-lg">{stat.label}</div>
+                                    <div className="text-xs md:text-sm text-purple-400 font-japanese">
+                                        {stat.japanese}
+                                    </div>
+                                </motion.div>
+                            ))}
+                        </motion.div>
                     </motion.div>
-                </motion.div>
+                </div>
             </div>
+
+            {/* Scroll Indicator */}
+            <motion.div
+                className="absolute bottom-8 left-1/2 transform -translate-x-1/2 cursor-pointer"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1.5, duration: 0.8 }}
+                onClick={scrollToAbout}
+            >
+                <motion.div
+                    className="flex flex-col items-center space-y-2 text-gray-400 hover:text-purple-400 transition-colors duration-300"
+                    animate={{ y: [0, 10, 0] }}
+                    transition={{ duration: 2, repeat: Infinity }}
+                >
+                    <span className="text-sm font-medium">Scroll Down</span>
+                    <span className="text-xs font-japanese">下にスクロール</span>
+                    <ChevronDown size={24} />
+                </motion.div>
+            </motion.div>
 
             {/* Background Video/Canvas (Optional) */}
             {isPlaying && (
@@ -332,7 +331,7 @@ const Hero = () => {
                     </motion.div>
                 </motion.div>
             )}
-        </section>
+        </div>
     )
 }
 

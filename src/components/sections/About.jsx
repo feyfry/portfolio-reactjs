@@ -87,34 +87,34 @@ const About = () => {
     }
 
     return (
-        <section id="about" className="py-20 bg-slate-900 relative overflow-hidden">
+        <div className="relative overflow-hidden bg-slate-900">
             {/* Background Elements */}
             <div className="absolute inset-0">
                 <div className="absolute top-1/4 left-0 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl" />
                 <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-pink-500/5 rounded-full blur-3xl" />
             </div>
 
-            <div className="container mx-auto px-6 relative z-10">
+            <div className="container-content relative z-10">
                 {/* Section Header */}
                 <motion.div
-                    className="text-center mb-16"
+                    className="section-header"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
                     viewport={{ once: true }}
                 >
-                    <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white">
                         About <span className="text-transparent bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text">Me</span>
                     </h2>
-                    <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+                    <p className="text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto">
                         Get to know the person behind the code
                     </p>
-                    <p className="text-sm text-purple-400 font-japanese mt-2">
+                    <p className="text-sm md:text-base text-purple-400 font-japanese mt-2">
                         私について知ってください
                     </p>
                 </motion.div>
 
-                <div className="grid lg:grid-cols-3 gap-12">
+                <div className="grid lg:grid-cols-3 gap-8 lg:gap-12 xl:gap-16">
                     {/* Left Column - Image & Facts */}
                     <motion.div
                         className="lg:col-span-1"
@@ -149,7 +149,7 @@ const About = () => {
 
                         {/* Personal Facts */}
                         <motion.div
-                            className="bg-slate-800/50 backdrop-blur-lg rounded-2xl p-6 border border-slate-700/50"
+                            className="card card-hover"
                             variants={stagger}
                             initial="initial"
                             whileInView="animate"
@@ -157,7 +157,7 @@ const About = () => {
                         >
                             <h3 className="text-white font-semibold text-lg mb-6 text-center">
                                 Quick Facts
-                                <span className="block text-sm text-purple-400 font-japanese">基本情報</span>
+                                <span className="block text-sm text-purple-400 font-japanese mt-1">基本情報</span>
                             </h3>
 
                             <div className="space-y-4">
@@ -170,10 +170,10 @@ const About = () => {
                                             variants={fadeInUp}
                                             custom={index}
                                         >
-                                            <div className="w-10 h-10 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
+                                            <div className="w-10 h-10 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center flex-shrink-0">
                                                 <Icon size={18} className="text-white" />
                                             </div>
-                                            <div className="flex-1">
+                                            <div className="flex-1 min-w-0">
                                                 <p className="text-gray-300 text-sm">{fact.label}</p>
                                                 <p className="text-white font-medium">{fact.value}</p>
                                                 <p className="text-purple-400 text-xs font-japanese">{fact.japanese}</p>
@@ -186,10 +186,10 @@ const About = () => {
                     </motion.div>
 
                     {/* Right Column - Content */}
-                    <div className="lg:col-span-2">
+                    <div className="lg:col-span-2 content-spacing">
                         {/* Tab Navigation */}
                         <motion.div
-                            className="flex flex-wrap gap-2 mb-8"
+                            className="flex flex-wrap gap-2 mb-8 lg:mb-12"
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6 }}
@@ -201,9 +201,9 @@ const About = () => {
                                     <motion.button
                                         key={tab.id}
                                         onClick={() => setActiveTab(tab.id)}
-                                        className={`flex items-center space-x-2 px-6 py-3 rounded-full font-medium transition-all duration-300 ${activeTab === tab.id
-                                                ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg'
-                                                : 'bg-slate-800 text-gray-400 hover:bg-slate-700 hover:text-white'
+                                        className={`flex items-center space-x-2 px-4 md:px-6 py-3 rounded-full font-medium transition-all duration-300 ${activeTab === tab.id
+                                            ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg'
+                                            : 'bg-slate-800 text-gray-400 hover:bg-slate-700 hover:text-white'
                                             }`}
                                         whileHover={{ scale: 1.05 }}
                                         whileTap={{ scale: 0.95 }}
@@ -225,9 +225,9 @@ const About = () => {
                             transition={{ duration: 0.5 }}
                         >
                             {activeTab === 'story' && (
-                                <div className="space-y-6">
-                                    <h3 className="text-2xl font-bold text-white mb-4">My Story</h3>
-                                    <div className="prose prose-lg text-gray-300 max-w-none space-y-4">
+                                <div className="content-spacing-sm">
+                                    <h3 className="text-2xl md:text-3xl font-bold text-white mb-6">My Story</h3>
+                                    <div className="prose prose-lg text-gray-300 max-w-none content-spacing-sm">
                                         <p>
                                             Hello! I'm {personalData.name}, a passionate {personalData.title} based in {personalData.location}.
                                             My journey into the world of technology began during my university years when I discovered
@@ -246,31 +246,31 @@ const About = () => {
                             )}
 
                             {activeTab === 'passion' && (
-                                <div className="space-y-6">
-                                    <h3 className="text-2xl font-bold text-white mb-4">What Drives Me</h3>
+                                <div className="content-spacing-sm">
+                                    <h3 className="text-2xl md:text-3xl font-bold text-white mb-6">What Drives Me</h3>
                                     <div className="grid md:grid-cols-2 gap-6">
-                                        <div className="bg-slate-800/50 rounded-xl p-6">
+                                        <div className="card">
                                             <h4 className="text-white font-semibold mb-3">Innovation</h4>
                                             <p className="text-gray-300">
                                                 I'm constantly exploring new technologies and pushing the boundaries
                                                 of what's possible in web development.
                                             </p>
                                         </div>
-                                        <div className="bg-slate-800/50 rounded-xl p-6">
+                                        <div className="card">
                                             <h4 className="text-white font-semibold mb-3">User Experience</h4>
                                             <p className="text-gray-300">
                                                 Creating intuitive, accessible, and delightful experiences that users love
                                                 is at the heart of everything I do.
                                             </p>
                                         </div>
-                                        <div className="bg-slate-800/50 rounded-xl p-6">
+                                        <div className="card">
                                             <h4 className="text-white font-semibold mb-3">Continuous Learning</h4>
                                             <p className="text-gray-300">
                                                 The tech world evolves rapidly, and I embrace that change by constantly
                                                 learning and adapting to new trends and technologies.
                                             </p>
                                         </div>
-                                        <div className="bg-slate-800/50 rounded-xl p-6">
+                                        <div className="card">
                                             <h4 className="text-white font-semibold mb-3">Collaboration</h4>
                                             <p className="text-gray-300">
                                                 I believe the best solutions come from diverse teams working together
@@ -282,8 +282,8 @@ const About = () => {
                             )}
 
                             {activeTab === 'journey' && (
-                                <div className="space-y-6">
-                                    <h3 className="text-2xl font-bold text-white mb-4">My Journey</h3>
+                                <div className="content-spacing-sm">
+                                    <h3 className="text-2xl md:text-3xl font-bold text-white mb-6">My Journey</h3>
                                     <div className="space-y-6">
                                         {achievements.map((achievement, index) => (
                                             <motion.div
@@ -305,8 +305,8 @@ const About = () => {
                             )}
 
                             {activeTab === 'values' && (
-                                <div className="space-y-6">
-                                    <h3 className="text-2xl font-bold text-white mb-4">Core Values</h3>
+                                <div className="content-spacing-sm">
+                                    <h3 className="text-2xl md:text-3xl font-bold text-white mb-6">Core Values</h3>
                                     <div className="grid gap-4">
                                         {[
                                             { title: 'Quality First', description: 'I believe in delivering excellence in every line of code.' },
@@ -334,34 +334,34 @@ const About = () => {
 
                 {/* Interests Section */}
                 <motion.div
-                    className="mt-16"
+                    className="mt-16 lg:mt-20"
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
                     viewport={{ once: true }}
                 >
-                    <h3 className="text-2xl font-bold text-white mb-8 text-center">
+                    <h3 className="text-2xl md:text-3xl font-bold text-white mb-8 text-center">
                         When I'm Not Coding
-                        <span className="block text-sm text-purple-400 font-japanese mt-1">
+                        <span className="block text-sm text-purple-400 font-japanese mt-2">
                             コーディング以外の時間
                         </span>
                     </h3>
 
-                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6">
                         {interests.map((interest, index) => (
                             <motion.div
                                 key={interest.name}
-                                className="bg-slate-800/50 backdrop-blur-lg rounded-xl p-4 text-center border border-slate-700/50 hover:border-purple-500/50 transition-all duration-300 group cursor-pointer"
+                                className="card card-hover text-center group cursor-pointer"
                                 initial={{ opacity: 0, scale: 0.8 }}
                                 whileInView={{ opacity: 1, scale: 1 }}
                                 transition={{ duration: 0.5, delay: index * 0.1 }}
                                 viewport={{ once: true }}
                                 whileHover={{ scale: 1.05, y: -5 }}
                             >
-                                <div className="text-3xl mb-2 group-hover:scale-110 transition-transform duration-300">
+                                <div className="text-3xl md:text-4xl mb-3 group-hover:scale-110 transition-transform duration-300">
                                     {interest.emoji}
                                 </div>
-                                <p className="text-white font-medium text-sm">{interest.name}</p>
+                                <p className="text-white font-medium text-sm md:text-base">{interest.name}</p>
                                 <p className="text-purple-400 text-xs font-japanese">{interest.japanese}</p>
                             </motion.div>
                         ))}
@@ -370,27 +370,27 @@ const About = () => {
 
                 {/* CTA */}
                 <motion.div
-                    className="text-center mt-16"
+                    className="text-center mt-16 lg:mt-20"
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
                     viewport={{ once: true }}
                 >
-                    <p className="text-gray-300 mb-6 text-lg">
+                    <p className="text-gray-300 mb-6 text-lg md:text-xl">
                         Ready to bring your ideas to life?
                     </p>
                     <motion.button
                         onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                        className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-8 py-4 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300 inline-flex items-center space-x-2"
+                        className="btn btn-primary text-lg"
                         whileHover={{ scale: 1.05, y: -2 }}
                         whileTap={{ scale: 0.95 }}
                     >
                         <span>Let's Connect</span>
-                        <span className="font-japanese">つながりましょう</span>
+                        <span className="font-japanese ml-2">つながりましょう</span>
                     </motion.button>
                 </motion.div>
             </div>
-        </section>
+        </div>
     )
 }
 
