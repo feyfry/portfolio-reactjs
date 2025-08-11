@@ -1,5 +1,5 @@
 import { useState, useRef } from 'react'
-import { useInView } from 'framer-motion'
+import { motion, useInView } from 'framer-motion'
 import PropTypes from 'prop-types'
 import {
     Code,
@@ -242,8 +242,8 @@ const Skills = () => {
                                 key={key}
                                 onClick={() => setSelectedCategory(key)}
                                 className={`flex items-center space-x-2 px-6 py-3 rounded-full font-medium transition-all duration-300 border ${selectedCategory === key
-                                        ? `bg-gradient-to-r ${category.color} text-white border-transparent shadow-lg`
-                                        : 'bg-slate-800/50 text-gray-400 border-slate-700/50 hover:bg-slate-700/50 hover:text-white hover:border-slate-600'
+                                    ? `bg-gradient-to-r ${category.color} text-white border-transparent shadow-lg`
+                                    : 'bg-slate-800/50 text-gray-400 border-slate-700/50 hover:bg-slate-700/50 hover:text-white hover:border-slate-600'
                                     }`}
                                 variants={itemVariants}
                                 whileHover={{ scale: 1.05 }}

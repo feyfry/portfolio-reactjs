@@ -1,6 +1,5 @@
-// src/components/sections/Experience.jsx
 import { useState } from 'react'
-import { AnimatePresence } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 import PropTypes from 'prop-types'
 import {
     Briefcase,

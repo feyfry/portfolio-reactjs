@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { motion } from 'framer-motion'
 import { ChevronDown, Download, Mail, Play, Pause } from 'lucide-react'
 import personalData from '../../data/personal.json'
 

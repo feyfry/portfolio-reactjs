@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
+import { motion } from 'framer-motion'
 import PropTypes from 'prop-types'
 
 const ParticleBackground = ({

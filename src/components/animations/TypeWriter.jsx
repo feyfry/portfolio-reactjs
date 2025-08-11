@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from 'react'
 import PropTypes from 'prop-types'
+import { motion } from 'framer-motion'
 
 const TypeWriter = ({
     text = '',

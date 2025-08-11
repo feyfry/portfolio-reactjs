@@ -1,6 +1,5 @@
-// src/components/ui/Modal.jsx
 import { useEffect } from 'react'
-import { AnimatePresence } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 import PropTypes from 'prop-types'
 import { X, AlertCircle, CheckCircle, Info, AlertTriangle } from 'lucide-react'
 

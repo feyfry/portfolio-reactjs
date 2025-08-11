@@ -1,4 +1,5 @@
 import { Heart, ArrowUp, Mail, Phone, MapPin } from 'lucide-react'
+import { motion } from 'framer-motion'
 import SocialLinks from './SocialLinks'
 import personalData from '../../data/personal.json'
 

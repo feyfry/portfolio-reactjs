@@ -1,6 +1,6 @@
 // src/components/common/ScrollToTop.jsx
 import { useState, useEffect } from 'react'
-import { AnimatePresence } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 import { ArrowUp, ChevronUp, Rocket } from 'lucide-react'
 import PropTypes from 'prop-types'
 

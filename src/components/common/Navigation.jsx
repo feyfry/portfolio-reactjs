@@ -1,6 +1,5 @@
-// src/components/common/Navigation.jsx
 import { useState, useEffect } from 'react'
-import { AnimatePresence } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 import {
     Home,
     User,

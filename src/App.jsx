@@ -1,6 +1,5 @@
-// src/App.jsx
 import { useState, useEffect } from 'react'
-import { AnimatePresence } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 
 // Common Components
 import Header from './components/common/Header'
