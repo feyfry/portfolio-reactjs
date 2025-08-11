@@ -36,7 +36,7 @@ function App() {
       try {
         // Preload critical images
         const criticalImages = [
-          '/assets/images/profile/avatar.jpg',
+          '../public/assets/images/profile/avatar.jpg',
           // Add other critical images here
         ]
 

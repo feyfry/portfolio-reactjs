@@ -46,8 +46,8 @@ const TimelineItem = ({
             {/* Timeline Dot */}
             <motion.div
                 className={`absolute left-4 top-8 w-4 h-4 rounded-full border-2 ${isActive
-                        ? 'bg-gradient-to-r from-purple-500 to-pink-500 border-white shadow-lg'
-                        : 'bg-slate-800 border-slate-600'
+                    ? 'bg-gradient-to-r from-purple-500 to-pink-500 border-white shadow-lg'
+                    : 'bg-slate-800 border-slate-600'
                     } transition-all duration-300`}
                 whileHover={{ scale: 1.2 }}
             />
@@ -55,8 +55,8 @@ const TimelineItem = ({
             {/* Content Card */}
             <motion.div
                 className={`ml-12 mb-8 bg-slate-800/50 backdrop-blur-lg rounded-2xl border transition-all duration-300 cursor-pointer ${isActive
-                        ? 'border-purple-500/50 shadow-xl shadow-purple-500/10'
-                        : 'border-slate-700/50 hover:border-slate-600/50'
+                    ? 'border-purple-500/50 shadow-xl shadow-purple-500/10'
+                    : 'border-slate-700/50 hover:border-slate-600/50'
                     }`}
                 onClick={onItemClick}
                 whileHover={{ scale: 1.02, y: -2 }}
@@ -226,8 +226,8 @@ TimelineItem.propTypes = {
     calculateDuration: PropTypes.func.isRequired
 }
 
-// ✅ Extract StatCard as separate component with PropTypes
-const StatCard = ({ icon: label, value, color, japanese }) => (
+// ✅ Fixed StatCard component - using the icon prop correctly
+const StatCard = ({ icon: IconComponent, label, value, color, japanese }) => (
     <motion.div
         className="bg-slate-800/50 backdrop-blur-lg rounded-xl p-6 border border-slate-700/50 text-center"
         whileHover={{ scale: 1.05, y: -2 }}
@@ -237,7 +237,7 @@ const StatCard = ({ icon: label, value, color, japanese }) => (
         viewport={{ once: true }}
     >
         <div className={`w-12 h-12 bg-gradient-to-r ${color} rounded-lg flex items-center justify-center mx-auto mb-4`}>
-            <Icon size={24} className="text-white" />
+            <IconComponent size={24} className="text-white" />
         </div>
         <div className="text-2xl font-bold text-white mb-2">{value}</div>
         <div className="text-gray-400 font-medium">{label}</div>
@@ -399,8 +399,8 @@ const Experience = () => {
                                     key={tab.id}
                                     onClick={() => setActiveTab(tab.id)}
                                     className={`flex items-center space-x-2 px-6 py-3 rounded-full font-medium transition-all duration-300 ${activeTab === tab.id
-                                            ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg'
-                                            : 'text-gray-400 hover:text-white'
+                                        ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg'
+                                        : 'text-gray-400 hover:text-white'
                                         }`}
                                     whileHover={{ scale: 1.05 }}
                                     whileTap={{ scale: 0.95 }}

@@ -18,6 +18,70 @@ import SocialLinks from '../common/SocialLinks'
 import personalData from '../../data/personal.json'
 import PropTypes from 'prop-types'
 
+// FormField component defined before the main component
+const FormField = ({ label, name, type = 'text', required = false, options, children, japanese, formData, handleInputChange }) => (
+    <motion.div
+        className="space-y-2"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+    >
+        <label className="flex items-center justify-between text-white font-medium">
+            <span>{label}</span>
+            {japanese && <span className="text-xs text-purple-400 font-japanese">{japanese}</span>}
+            {required && <span className="text-red-400">*</span>}
+        </label>
+        {children || (
+            type === 'select' ? (
+                <select
+                    name={name}
+                    value={formData[name]}
+                    onChange={handleInputChange}
+                    required={required}
+                    className="w-full bg-slate-800/50 backdrop-blur-lg border border-slate-700/50 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-purple-500/50 transition-all duration-300"
+                >
+                    <option value="">Select an option</option>
+                    {options && options.map((option, index) => (
+                        <option key={index} value={option}>{option}</option>
+                    ))}
+                </select>
+            ) : type === 'textarea' ? (
+                <textarea
+                    name={name}
+                    value={formData[name]}
+                    onChange={handleInputChange}
+                    required={required}
+                    rows={5}
+                    className="w-full bg-slate-800/50 backdrop-blur-lg border border-slate-700/50 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-purple-500/50 transition-all duration-300 resize-none"
+                    placeholder={`Enter your ${label.toLowerCase()}...`}
+                />
+            ) : (
+                <input
+                    type={type}
+                    name={name}
+                    value={formData[name]}
+                    onChange={handleInputChange}
+                    required={required}
+                    className="w-full bg-slate-800/50 backdrop-blur-lg border border-slate-700/50 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-purple-500/50 transition-all duration-300"
+                    placeholder={`Enter your ${label.toLowerCase()}...`}
+                />
+            )
+        )}
+    </motion.div>
+)
+
+FormField.propTypes = {
+    label: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    type: PropTypes.string,
+    required: PropTypes.bool,
+    options: PropTypes.arrayOf(PropTypes.string),
+    children: PropTypes.node,
+    japanese: PropTypes.string,
+    formData: PropTypes.object.isRequired,
+    handleInputChange: PropTypes.func.isRequired
+}
+
 const Contact = () => {
     const [formData, setFormData] = useState({
         name: '',
@@ -113,7 +177,7 @@ const Contact = () => {
                 timeline: '',
                 projectType: ''
             })
-        } catch {
+        } catch (error) {
             setFormStatus({
                 isSubmitting: false,
                 isSubmitted: false,
@@ -148,57 +212,6 @@ const Contact = () => {
             japanese: '日本在住'
         }
     ]
-
-    const FormField = ({ label, name, type = 'text', required = false, options, children, japanese }) => (
-        <motion.div
-            className="space-y-2"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-        >
-            <label className="flex items-center justify-between text-white font-medium">
-                <span>{label}</span>
-                {japanese && <span className="text-xs text-purple-400 font-japanese">{japanese}</span>}
-                {required && <span className="text-red-400">*</span>}
-            </label>
-            {children || (
-                type === 'select' ? (
-                    <select
-                        name={name}
-                        value={formData[name]}
-                        onChange={handleInputChange}
-                        required={required}
-                        className="w-full bg-slate-800/50 backdrop-blur-lg border border-slate-700/50 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-purple-500/50 transition-all duration-300"
-                    >
-                        <option value="">Select an option</option>
-                        {options.map((option, index) => (
-                            <option key={index} value={option}>{option}</option>
-                        ))}
-                    </select>
-                ) : type === 'textarea' ? (
-                    <textarea
-                        name={name}
-                        value={formData[name]}
-                        onChange={handleInputChange}
-                        required={required}
-                        rows={type === 'textarea' ? 5 : 1}
-                        className="w-full bg-slate-800/50 backdrop-blur-lg border border-slate-700/50 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-purple-500/50 transition-all duration-300 resize-none"
-                        placeholder={`Enter your ${label.toLowerCase()}...`}
-                    />
-                ) : (
-                    <input
-                        type={type}
-                        name={name}
-                        value={formData[name]}
-                        onChange={handleInputChange}
-                        required={required}
-                        className="w-full bg-slate-800/50 backdrop-blur-lg border border-slate-700/50 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-purple-500/50 transition-all duration-300"
-                        placeholder={`Enter your ${label.toLowerCase()}...`}
-                    />
-                )
-            )}
-        </motion.div>
-    )
 
     return (
         <section id="contact" className="py-20 bg-slate-950 relative overflow-hidden">
@@ -373,8 +386,8 @@ const Contact = () => {
                                         key={method.id}
                                         onClick={() => setSelectedContactMethod(method.id)}
                                         className={`flex items-center space-x-2 px-4 py-2 rounded-full font-medium transition-all duration-300 ${selectedContactMethod === method.id
-                                                ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white'
-                                                : 'bg-slate-800/50 text-gray-400 hover:bg-slate-700/50 hover:text-white'
+                                            ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white'
+                                            : 'bg-slate-800/50 text-gray-400 hover:bg-slate-700/50 hover:text-white'
                                             }`}
                                         whileHover={{ scale: 1.05 }}
                                         whileTap={{ scale: 0.95 }}
@@ -404,6 +417,8 @@ const Contact = () => {
                                                 name="name"
                                                 required
                                                 japanese="お名前"
+                                                formData={formData}
+                                                handleInputChange={handleInputChange}
                                             />
                                             <FormField
                                                 label="Email"
@@ -411,6 +426,8 @@ const Contact = () => {
                                                 type="email"
                                                 required
                                                 japanese="メールアドレス"
+                                                formData={formData}
+                                                handleInputChange={handleInputChange}
                                             />
                                         </div>
 
@@ -419,6 +436,8 @@ const Contact = () => {
                                             name="subject"
                                             required
                                             japanese="件名"
+                                            formData={formData}
+                                            handleInputChange={handleInputChange}
                                         />
 
                                         <div className="grid md:grid-cols-2 gap-6">
@@ -428,6 +447,8 @@ const Contact = () => {
                                                 type="select"
                                                 options={projectTypes}
                                                 japanese="プロジェクトタイプ"
+                                                formData={formData}
+                                                handleInputChange={handleInputChange}
                                             />
                                             <FormField
                                                 label="Budget Range"
@@ -435,6 +456,8 @@ const Contact = () => {
                                                 type="select"
                                                 options={budgetRanges}
                                                 japanese="予算"
+                                                formData={formData}
+                                                handleInputChange={handleInputChange}
                                             />
                                         </div>
 
@@ -444,6 +467,8 @@ const Contact = () => {
                                             type="select"
                                             options={timelineOptions}
                                             japanese="スケジュール"
+                                            formData={formData}
+                                            handleInputChange={handleInputChange}
                                         />
 
                                         <FormField
@@ -452,6 +477,8 @@ const Contact = () => {
                                             type="textarea"
                                             required
                                             japanese="メッセージ"
+                                            formData={formData}
+                                            handleInputChange={handleInputChange}
                                         />
 
                                         {/* Form Status */}
@@ -599,16 +626,6 @@ const Contact = () => {
             </div>
         </section>
     )
-}
-
-FormField.propTypes = {
-    label: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
-    type: PropTypes.string,
-    required: PropTypes.bool,
-    options: PropTypes.arrayOf(PropTypes.string),
-    children: PropTypes.node,
-    japanese: PropTypes.string
 }
 
 export default Contact
