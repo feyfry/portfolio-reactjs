@@ -18,58 +18,25 @@ import Contact from './components/sections/Contact'
 
 // UI Components
 import SplashScreen from './components/ui/SplashScreen'
-import Loading from './components/ui/Loading'
 
 // Animation Components
 import { FloatingParticles } from './components/animations/ParticleBackground'
 import FadeIn from './components/animations/FadeIn'
 
 function App() {
-  // All useState hooks at top level
   const [isLoading, setIsLoading] = useState(true)
   const [isAppReady, setIsAppReady] = useState(false)
-  const [preloadComplete, setPreloadComplete] = useState(false)
 
-  // Preload critical resources
+  // Simplified loading - just show splash for 2 seconds
   useEffect(() => {
-    const preloadResources = async () => {
-      try {
-        // Preload critical images
-        const criticalImages = [
-          '/assets/images/profile/avatar.jpg',
-          // Add other critical images here
-        ]
+    const loadingTimer = setTimeout(() => {
+      setIsLoading(false)
+      setTimeout(() => {
+        setIsAppReady(true)
+      }, 100)
+    }, 2000) // 2 seconds instead of complex preload
 
-        const imagePromises = criticalImages.map(src => {
-          return new Promise((resolve) => {
-            const img = new Image()
-            img.onload = resolve
-            img.onerror = () => resolve() // Don't fail on image errors
-            img.src = src
-          })
-        })
-
-        // Preload fonts
-        const fontPromises = [
-          document.fonts.load('400 16px Inter'),
-          document.fonts.load('400 16px "Noto Sans JP"'),
-          document.fonts.load('400 16px "JetBrains Mono"')
-        ]
-
-        // Wait for resources
-        await Promise.allSettled([...imagePromises, ...fontPromises])
-
-        // Minimum loading time for better UX
-        await new Promise(resolve => setTimeout(resolve, 1000))
-
-        setPreloadComplete(true)
-      } catch (error) {
-        console.error('Preload error:', error)
-        setPreloadComplete(true) // Continue even if preload fails
-      }
-    }
-
-    preloadResources()
+    return () => clearTimeout(loadingTimer)
   }, [])
 
   // Handle splash screen completion
@@ -78,20 +45,6 @@ function App() {
     setTimeout(() => {
       setIsAppReady(true)
     }, 100)
-  }
-
-  // Show loading if preload not complete
-  if (!preloadComplete) {
-    return (
-      <div className="min-h-screen bg-slate-900 flex items-center justify-center">
-        <Loading
-          variant="kanji"
-          size="large"
-          text="Initializing..."
-          japanese="初期化中..."
-        />
-      </div>
-    )
   }
 
   return (
@@ -106,7 +59,7 @@ function App() {
             subtitle="読み込み中..."
             englishTitle="Portfolio"
             englishSubtitle="Loading..."
-            duration={3000}
+            duration={2000}
             showProgress={true}
             particles={true}
             backgroundElements={true}

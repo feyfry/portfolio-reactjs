@@ -154,7 +154,7 @@ const Hero = () => {
                         </span>
                     </motion.div>
 
-                    {/* Profile Image */}
+                    {/* Profile Avatar Placeholder */}
                     <motion.div
                         className="mb-8"
                         variants={floatingVariants}
@@ -163,11 +163,11 @@ const Hero = () => {
                     >
                         <div className="relative inline-block">
                             <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full animate-pulse opacity-75" />
-                            <img
-                                src={personalData.avatar}
-                                alt={personalData.name}
-                                className="relative w-32 h-32 md:w-40 md:h-40 rounded-full mx-auto border-4 border-white/20 shadow-2xl object-cover"
-                            />
+                            <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-full mx-auto border-4 border-white/20 shadow-2xl bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center">
+                                <span className="text-white text-4xl md:text-5xl font-bold">
+                                    {personalData.name.split(' ').map(n => n[0]).join('')}
+                                </span>
+                            </div>
                             <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-green-500 rounded-full border-4 border-slate-900 animate-pulse" />
                         </div>
                     </motion.div>

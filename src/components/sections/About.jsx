@@ -115,24 +115,25 @@ const About = () => {
                 </motion.div>
 
                 <div className="grid lg:grid-cols-3 gap-12">
-                    {/* Left Column - Image & Facts */}
+                    {/* Left Column - Avatar & Facts */}
                     <motion.div
                         className="lg:col-span-1"
                         {...fadeInUp}
                         viewport={{ once: true }}
                     >
-                        {/* Profile Image */}
+                        {/* Profile Avatar Placeholder */}
                         <div className="relative mb-8">
                             <motion.div
                                 className="relative overflow-hidden rounded-2xl"
                                 whileHover={{ scale: 1.02 }}
                                 transition={{ duration: 0.3 }}
                             >
-                                <img
-                                    src={personalData.avatar}
-                                    alt={personalData.name}
-                                    className="w-full aspect-[4/5] object-cover"
-                                />
+                                {/* Avatar placeholder using initials */}
+                                <div className="w-full aspect-[4/5] bg-gradient-to-br from-purple-600 via-pink-600 to-purple-800 flex items-center justify-center">
+                                    <span className="text-white text-6xl md:text-8xl font-bold">
+                                        {personalData.name.split(' ').map(n => n[0]).join('')}
+                                    </span>
+                                </div>
                                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent" />
 
                                 {/* Audio Control */}
@@ -202,8 +203,8 @@ const About = () => {
                                         key={tab.id}
                                         onClick={() => setActiveTab(tab.id)}
                                         className={`flex items-center space-x-2 px-6 py-3 rounded-full font-medium transition-all duration-300 ${activeTab === tab.id
-                                                ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg'
-                                                : 'bg-slate-800 text-gray-400 hover:bg-slate-700 hover:text-white'
+                                            ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg'
+                                            : 'bg-slate-800 text-gray-400 hover:bg-slate-700 hover:text-white'
                                             }`}
                                         whileHover={{ scale: 1.05 }}
                                         whileTap={{ scale: 0.95 }}
@@ -308,12 +309,7 @@ const About = () => {
                                 <div className="space-y-6">
                                     <h3 className="text-2xl font-bold text-white mb-4">Core Values</h3>
                                     <div className="grid gap-4">
-                                        {[
-                                            { title: 'Quality First', description: 'I believe in delivering excellence in every line of code.' },
-                                            { title: 'Transparency', description: 'Open communication and honest feedback build trust.' },
-                                            { title: 'Inclusivity', description: 'Technology should be accessible to everyone.' },
-                                            { title: 'Sustainability', description: 'Writing clean, maintainable code for the long term.' }
-                                        ].map((value, index) => (
+                                        {personalData.values.map((value, index) => (
                                             <motion.div
                                                 key={value.title}
                                                 className="p-6 bg-gradient-to-r from-slate-800/50 to-slate-700/50 rounded-xl border border-slate-600/30"
@@ -321,8 +317,16 @@ const About = () => {
                                                 animate={{ opacity: 1, y: 0 }}
                                                 transition={{ delay: index * 0.1 }}
                                             >
-                                                <h4 className="text-white font-semibold mb-2">{value.title}</h4>
-                                                <p className="text-gray-300">{value.description}</p>
+                                                <div className="flex items-start space-x-4">
+                                                    <div className="text-2xl">{value.icon}</div>
+                                                    <div>
+                                                        <h4 className="text-white font-semibold mb-2">{value.title}</h4>
+                                                        <p className="text-gray-300">{value.description}</p>
+                                                        <p className="text-purple-400 text-sm font-japanese mt-2">
+                                                            {value.japanese?.description || ''}
+                                                        </p>
+                                                    </div>
+                                                </div>
                                             </motion.div>
                                         ))}
                                     </div>

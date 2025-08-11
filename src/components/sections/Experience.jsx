@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
-import PropTypes from 'prop-types'
 import {
     Briefcase,
     GraduationCap,
@@ -18,240 +17,6 @@ import {
     Zap
 } from 'lucide-react'
 import experienceData from '../../data/experience.json'
-
-// ✅ Extract TimelineItem as separate component with PropTypes
-const TimelineItem = ({
-    item,
-    index,
-    type,
-    isExpanded,
-    isActive,
-    onItemClick,
-    formatDate,
-    calculateDuration
-}) => {
-    const isWork = type === 'work'
-
-    return (
-        <motion.div
-            className="relative"
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: index * 0.1 }}
-            viewport={{ once: true }}
-        >
-            {/* Timeline Line */}
-            <div className="absolute left-6 top-16 bottom-0 w-0.5 bg-gradient-to-b from-purple-500 to-pink-500 opacity-30" />
-
-            {/* Timeline Dot */}
-            <motion.div
-                className={`absolute left-4 top-8 w-4 h-4 rounded-full border-2 ${isActive
-                        ? 'bg-gradient-to-r from-purple-500 to-pink-500 border-white shadow-lg'
-                        : 'bg-slate-800 border-slate-600'
-                    } transition-all duration-300`}
-                whileHover={{ scale: 1.2 }}
-            />
-
-            {/* Content Card */}
-            <motion.div
-                className={`ml-12 mb-8 bg-slate-800/50 backdrop-blur-lg rounded-2xl border transition-all duration-300 cursor-pointer ${isActive
-                        ? 'border-purple-500/50 shadow-xl shadow-purple-500/10'
-                        : 'border-slate-700/50 hover:border-slate-600/50'
-                    }`}
-                onClick={onItemClick}
-                whileHover={{ scale: 1.02, y: -2 }}
-                layout
-            >
-                {/* Header */}
-                <div className="p-6">
-                    <div className="flex items-start justify-between mb-4">
-                        <div className="flex-1">
-                            <h3 className="text-xl font-bold text-white mb-1">
-                                {isWork ? item.position : item.degree}
-                            </h3>
-                            <div className="flex items-center space-x-2 text-purple-400 font-medium mb-2">
-                                <Building size={16} />
-                                <span>{isWork ? item.company : item.institution}</span>
-                            </div>
-                            <div className="flex flex-wrap items-center gap-4 text-sm text-gray-400">
-                                <div className="flex items-center space-x-1">
-                                    <MapPin size={14} />
-                                    <span>{item.location}</span>
-                                </div>
-                                <div className="flex items-center space-x-1">
-                                    <Calendar size={14} />
-                                    <span>
-                                        {formatDate(item.startDate)} - {formatDate(item.endDate)}
-                                    </span>
-                                </div>
-                                <div className="flex items-center space-x-1">
-                                    <TrendingUp size={14} />
-                                    <span>{calculateDuration(item.startDate, item.endDate)}</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Status Badge */}
-                        <div className="flex flex-col items-end space-y-2">
-                            {item.endDate === 'Present' && (
-                                <span className="bg-green-500/20 text-green-400 px-3 py-1 rounded-full text-xs font-medium border border-green-500/30">
-                                    Current
-                                </span>
-                            )}
-                            {item.gpa && (
-                                <span className="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full text-xs font-medium">
-                                    GPA: {item.gpa}
-                                </span>
-                            )}
-                        </div>
-                    </div>
-
-                    {/* Description */}
-                    <p className="text-gray-300 mb-4 leading-relaxed">
-                        {item.description}
-                    </p>
-
-                    {/* Technologies/Courses */}
-                    {item.technologies && (
-                        <div className="flex flex-wrap gap-2 mb-4">
-                            {item.technologies.map((tech, techIndex) => (
-                                <span
-                                    key={techIndex}
-                                    className="bg-slate-700/50 text-purple-400 px-2 py-1 rounded text-xs font-medium border border-slate-600/50"
-                                >
-                                    {tech}
-                                </span>
-                            ))}
-                        </div>
-                    )}
-
-                    {/* Expand Button */}
-                    <motion.button
-                        className="flex items-center space-x-2 text-purple-400 hover:text-purple-300 transition-colors duration-300"
-                        animate={{ rotate: isExpanded ? 180 : 0 }}
-                    >
-                        <span className="text-sm">
-                            {isExpanded ? 'Show Less' : 'Show More'}
-                        </span>
-                        <ChevronDown size={16} />
-                    </motion.button>
-                </div>
-
-                {/* Expanded Content */}
-                <AnimatePresence>
-                    {isExpanded && (
-                        <motion.div
-                            className="border-t border-slate-700/50 p-6"
-                            initial={{ opacity: 0, height: 0 }}
-                            animate={{ opacity: 1, height: 'auto' }}
-                            exit={{ opacity: 0, height: 0 }}
-                            transition={{ duration: 0.3 }}
-                        >
-                            {/* Achievements */}
-                            {item.achievements && (
-                                <div className="mb-6">
-                                    <h4 className="text-white font-semibold mb-3 flex items-center space-x-2">
-                                        <Trophy size={16} className="text-yellow-400" />
-                                        <span>Key Achievements</span>
-                                    </h4>
-                                    <ul className="space-y-2">
-                                        {item.achievements.map((achievement, achievementIndex) => (
-                                            <motion.li
-                                                key={achievementIndex}
-                                                className="flex items-start space-x-2 text-gray-300"
-                                                initial={{ opacity: 0, x: -10 }}
-                                                animate={{ opacity: 1, x: 0 }}
-                                                transition={{ delay: achievementIndex * 0.1 }}
-                                            >
-                                                <Star size={14} className="text-purple-400 mt-0.5 flex-shrink-0" />
-                                                <span>{achievement}</span>
-                                            </motion.li>
-                                        ))}
-                                    </ul>
-                                </div>
-                            )}
-
-                            {/* Relevant Courses */}
-                            {item.relevant_courses && (
-                                <div>
-                                    <h4 className="text-white font-semibold mb-3 flex items-center space-x-2">
-                                        <BookOpen size={16} className="text-blue-400" />
-                                        <span>Relevant Coursework</span>
-                                    </h4>
-                                    <div className="grid grid-cols-2 gap-2">
-                                        {item.relevant_courses.map((course, courseIndex) => (
-                                            <motion.div
-                                                key={courseIndex}
-                                                className="bg-slate-700/30 rounded-lg p-2 text-sm text-gray-300"
-                                                initial={{ opacity: 0, scale: 0.8 }}
-                                                animate={{ opacity: 1, scale: 1 }}
-                                                transition={{ delay: courseIndex * 0.05 }}
-                                            >
-                                                {course}
-                                            </motion.div>
-                                        ))}
-                                    </div>
-                                </div>
-                            )}
-                        </motion.div>
-                    )}
-                </AnimatePresence>
-            </motion.div>
-        </motion.div>
-    )
-}
-
-TimelineItem.propTypes = {
-    item: PropTypes.shape({
-        id: PropTypes.number.isRequired,
-        position: PropTypes.string,
-        degree: PropTypes.string,
-        company: PropTypes.string,
-        institution: PropTypes.string,
-        location: PropTypes.string.isRequired,
-        startDate: PropTypes.string.isRequired,
-        endDate: PropTypes.string.isRequired,
-        description: PropTypes.string.isRequired,
-        technologies: PropTypes.arrayOf(PropTypes.string),
-        achievements: PropTypes.arrayOf(PropTypes.string),
-        relevant_courses: PropTypes.arrayOf(PropTypes.string),
-        gpa: PropTypes.string
-    }).isRequired,
-    index: PropTypes.number.isRequired,
-    type: PropTypes.oneOf(['work', 'education']).isRequired,
-    isExpanded: PropTypes.bool.isRequired,
-    isActive: PropTypes.bool.isRequired,
-    onItemClick: PropTypes.func.isRequired,
-    formatDate: PropTypes.func.isRequired,
-    calculateDuration: PropTypes.func.isRequired
-}
-
-// ✅ Extract StatCard as separate component with PropTypes
-const StatCard = ({ icon: label, value, color, japanese }) => (
-    <motion.div
-        className="bg-slate-800/50 backdrop-blur-lg rounded-xl p-6 border border-slate-700/50 text-center"
-        whileHover={{ scale: 1.05, y: -2 }}
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-    >
-        <div className={`w-12 h-12 bg-gradient-to-r ${color} rounded-lg flex items-center justify-center mx-auto mb-4`}>
-            <Icon size={24} className="text-white" />
-        </div>
-        <div className="text-2xl font-bold text-white mb-2">{value}</div>
-        <div className="text-gray-400 font-medium">{label}</div>
-        <div className="text-xs text-purple-400 font-japanese">{japanese}</div>
-    </motion.div>
-)
-
-StatCard.propTypes = {
-    icon: PropTypes.elementType.isRequired,
-    label: PropTypes.string.isRequired,
-    value: PropTypes.string.isRequired,
-    color: PropTypes.string.isRequired,
-    japanese: PropTypes.string.isRequired
-}
 
 const Experience = () => {
     const [activeTab, setActiveTab] = useState('work')
@@ -308,6 +73,233 @@ const Experience = () => {
         setExpandedItem(isCurrentlyExpanded ? null : itemKey)
     }
 
+    // Stats data
+    const statsData = [
+        {
+            icon: Briefcase,
+            label: "Experience",
+            value: "3+ Years",
+            color: "from-blue-500 to-cyan-500",
+            japanese: "経験年数"
+        },
+        {
+            icon: Building,
+            label: "Companies",
+            value: "2+",
+            color: "from-green-500 to-emerald-500",
+            japanese: "会社数"
+        },
+        {
+            icon: Users,
+            label: "Projects Led",
+            value: "10+",
+            color: "from-purple-500 to-pink-500",
+            japanese: "プロジェクト"
+        },
+        {
+            icon: Award,
+            label: "Certifications",
+            value: "5+",
+            color: "from-orange-500 to-red-500",
+            japanese: "認定"
+        }
+    ]
+
+    // Timeline Item Component
+    const TimelineItem = ({ item, index, type }) => {
+        const isWork = type === 'work'
+        const itemKey = `${activeTab}-${item.id}`
+        const isExpanded = expandedItem === itemKey
+        const isActive = selectedExperience?.id === item.id
+
+        return (
+            <motion.div
+                className="relative"
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+            >
+                {/* Timeline Line */}
+                <div className="absolute left-6 top-16 bottom-0 w-0.5 bg-gradient-to-b from-purple-500 to-pink-500 opacity-30" />
+
+                {/* Timeline Dot */}
+                <motion.div
+                    className={`absolute left-4 top-8 w-4 h-4 rounded-full border-2 ${isActive
+                        ? 'bg-gradient-to-r from-purple-500 to-pink-500 border-white shadow-lg'
+                        : 'bg-slate-800 border-slate-600'
+                        } transition-all duration-300`}
+                    whileHover={{ scale: 1.2 }}
+                />
+
+                {/* Content Card */}
+                <motion.div
+                    className={`ml-12 mb-8 bg-slate-800/50 backdrop-blur-lg rounded-2xl border transition-all duration-300 cursor-pointer ${isActive
+                        ? 'border-purple-500/50 shadow-xl shadow-purple-500/10'
+                        : 'border-slate-700/50 hover:border-slate-600/50'
+                        }`}
+                    onClick={() => handleItemClick(item)}
+                    whileHover={{ scale: 1.02, y: -2 }}
+                    layout
+                >
+                    {/* Header */}
+                    <div className="p-6">
+                        <div className="flex items-start justify-between mb-4">
+                            <div className="flex-1">
+                                <h3 className="text-xl font-bold text-white mb-1">
+                                    {isWork ? item.position : item.degree}
+                                </h3>
+                                <div className="flex items-center space-x-2 text-purple-400 font-medium mb-2">
+                                    <Building size={16} />
+                                    <span>{isWork ? item.company : item.institution}</span>
+                                </div>
+                                <div className="flex flex-wrap items-center gap-4 text-sm text-gray-400">
+                                    <div className="flex items-center space-x-1">
+                                        <MapPin size={14} />
+                                        <span>{item.location}</span>
+                                    </div>
+                                    <div className="flex items-center space-x-1">
+                                        <Calendar size={14} />
+                                        <span>
+                                            {formatDate(item.startDate)} - {formatDate(item.endDate)}
+                                        </span>
+                                    </div>
+                                    <div className="flex items-center space-x-1">
+                                        <TrendingUp size={14} />
+                                        <span>{calculateDuration(item.startDate, item.endDate)}</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Status Badge */}
+                            <div className="flex flex-col items-end space-y-2">
+                                {item.endDate === 'Present' && (
+                                    <span className="bg-green-500/20 text-green-400 px-3 py-1 rounded-full text-xs font-medium border border-green-500/30">
+                                        Current
+                                    </span>
+                                )}
+                                {item.gpa && (
+                                    <span className="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full text-xs font-medium">
+                                        GPA: {item.gpa}
+                                    </span>
+                                )}
+                            </div>
+                        </div>
+
+                        {/* Description */}
+                        <p className="text-gray-300 mb-4 leading-relaxed">
+                            {item.description}
+                        </p>
+
+                        {/* Technologies/Courses */}
+                        {item.technologies && (
+                            <div className="flex flex-wrap gap-2 mb-4">
+                                {item.technologies.map((tech, techIndex) => (
+                                    <span
+                                        key={techIndex}
+                                        className="bg-slate-700/50 text-purple-400 px-2 py-1 rounded text-xs font-medium border border-slate-600/50"
+                                    >
+                                        {tech}
+                                    </span>
+                                ))}
+                            </div>
+                        )}
+
+                        {/* Expand Button */}
+                        <motion.button
+                            className="flex items-center space-x-2 text-purple-400 hover:text-purple-300 transition-colors duration-300"
+                            animate={{ rotate: isExpanded ? 180 : 0 }}
+                        >
+                            <span className="text-sm">
+                                {isExpanded ? 'Show Less' : 'Show More'}
+                            </span>
+                            <ChevronDown size={16} />
+                        </motion.button>
+                    </div>
+
+                    {/* Expanded Content */}
+                    <AnimatePresence>
+                        {isExpanded && (
+                            <motion.div
+                                className="border-t border-slate-700/50 p-6"
+                                initial={{ opacity: 0, height: 0 }}
+                                animate={{ opacity: 1, height: 'auto' }}
+                                exit={{ opacity: 0, height: 0 }}
+                                transition={{ duration: 0.3 }}
+                            >
+                                {/* Achievements */}
+                                {item.achievements && (
+                                    <div className="mb-6">
+                                        <h4 className="text-white font-semibold mb-3 flex items-center space-x-2">
+                                            <Trophy size={16} className="text-yellow-400" />
+                                            <span>Key Achievements</span>
+                                        </h4>
+                                        <ul className="space-y-2">
+                                            {item.achievements.map((achievement, achievementIndex) => (
+                                                <motion.li
+                                                    key={achievementIndex}
+                                                    className="flex items-start space-x-2 text-gray-300"
+                                                    initial={{ opacity: 0, x: -10 }}
+                                                    animate={{ opacity: 1, x: 0 }}
+                                                    transition={{ delay: achievementIndex * 0.1 }}
+                                                >
+                                                    <Star size={14} className="text-purple-400 mt-0.5 flex-shrink-0" />
+                                                    <span>{achievement}</span>
+                                                </motion.li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                )}
+
+                                {/* Relevant Courses */}
+                                {item.relevant_courses && (
+                                    <div>
+                                        <h4 className="text-white font-semibold mb-3 flex items-center space-x-2">
+                                            <BookOpen size={16} className="text-blue-400" />
+                                            <span>Relevant Coursework</span>
+                                        </h4>
+                                        <div className="grid grid-cols-2 gap-2">
+                                            {item.relevant_courses.map((course, courseIndex) => (
+                                                <motion.div
+                                                    key={courseIndex}
+                                                    className="bg-slate-700/30 rounded-lg p-2 text-sm text-gray-300"
+                                                    initial={{ opacity: 0, scale: 0.8 }}
+                                                    animate={{ opacity: 1, scale: 1 }}
+                                                    transition={{ delay: courseIndex * 0.05 }}
+                                                >
+                                                    {course}
+                                                </motion.div>
+                                            ))}
+                                        </div>
+                                    </div>
+                                )}
+                            </motion.div>
+                        )}
+                    </AnimatePresence>
+                </motion.div>
+            </motion.div>
+        )
+    }
+
+    // Stat Card Component
+    const StatCard = ({ icon: label, value, color, japanese }) => (
+        <motion.div
+            className="bg-slate-800/50 backdrop-blur-lg rounded-xl p-6 border border-slate-700/50 text-center"
+            whileHover={{ scale: 1.05, y: -2 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+        >
+            <div className={`w-12 h-12 bg-gradient-to-r ${color} rounded-lg flex items-center justify-center mx-auto mb-4`}>
+                <Icon size={24} className="text-white" />
+            </div>
+            <div className="text-2xl font-bold text-white mb-2">{value}</div>
+            <div className="text-gray-400 font-medium">{label}</div>
+            <div className="text-xs text-purple-400 font-japanese">{japanese}</div>
+        </motion.div>
+    )
+
     return (
         <section id="experience" className="py-20 bg-slate-900 relative overflow-hidden">
             {/* Background Elements */}
@@ -353,34 +345,9 @@ const Experience = () => {
                     transition={{ duration: 0.8 }}
                     viewport={{ once: true }}
                 >
-                    <StatCard
-                        icon={Briefcase}
-                        label="Experience"
-                        value="3+ Years"
-                        color="from-blue-500 to-cyan-500"
-                        japanese="経験年数"
-                    />
-                    <StatCard
-                        icon={Building}
-                        label="Companies"
-                        value="2+"
-                        color="from-green-500 to-emerald-500"
-                        japanese="会社数"
-                    />
-                    <StatCard
-                        icon={Users}
-                        label="Projects Led"
-                        value="10+"
-                        color="from-purple-500 to-pink-500"
-                        japanese="プロジェクト"
-                    />
-                    <StatCard
-                        icon={Award}
-                        label="Certifications"
-                        value="5+"
-                        color="from-orange-500 to-red-500"
-                        japanese="認定"
-                    />
+                    {statsData.map((stat, index) => (
+                        <StatCard key={index} {...stat} />
+                    ))}
                 </motion.div>
 
                 {/* Tab Navigation */}
@@ -399,8 +366,8 @@ const Experience = () => {
                                     key={tab.id}
                                     onClick={() => setActiveTab(tab.id)}
                                     className={`flex items-center space-x-2 px-6 py-3 rounded-full font-medium transition-all duration-300 ${activeTab === tab.id
-                                            ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg'
-                                            : 'text-gray-400 hover:text-white'
+                                        ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg'
+                                        : 'text-gray-400 hover:text-white'
                                         }`}
                                     whileHover={{ scale: 1.05 }}
                                     whileTap={{ scale: 0.95 }}
@@ -430,11 +397,6 @@ const Experience = () => {
                                     item={item}
                                     index={index}
                                     type={activeTab}
-                                    isExpanded={expandedItem === `${activeTab}-${item.id}`}
-                                    isActive={selectedExperience?.id === item.id}
-                                    onItemClick={() => handleItemClick(item)}
-                                    formatDate={formatDate}
-                                    calculateDuration={calculateDuration}
                                 />
                             ))}
                         </motion.div>

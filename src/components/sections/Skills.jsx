@@ -1,6 +1,5 @@
 import { useState, useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
-import PropTypes from 'prop-types'
 import {
     Code,
     Database,
@@ -16,106 +15,6 @@ import {
     CheckCircle
 } from 'lucide-react'
 import skillsData from '../../data/skills.json'
-
-// ✅ Extract SkillBar as separate component with PropTypes
-const SkillBar = ({
-    skill,
-    index,
-    isInView,
-    hoveredSkill,
-    setHoveredSkill,
-    getProficiencyLevel
-}) => {
-    const proficiency = getProficiencyLevel(skill.level)
-
-    return (
-        <motion.div
-            className="group relative"
-            initial={{ opacity: 0, y: 20, scale: 0.95 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ type: "spring", stiffness: 100, delay: index * 0.1 }}
-            onHoverStart={() => setHoveredSkill(skill.name)}
-            onHoverEnd={() => setHoveredSkill(null)}
-        >
-            <div className="bg-slate-800/50 backdrop-blur-lg rounded-xl p-6 border border-slate-700/50 hover:border-purple-500/50 transition-all duration-300 hover:bg-slate-800/70">
-                {/* Skill Header */}
-                <div className="flex items-center justify-between mb-4">
-                    <div className="flex items-center space-x-3">
-                        <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
-                            {skill.icon ? (
-                                <span className="text-xl">{skill.icon}</span>
-                            ) : (
-                                <Code size={20} className="text-white" />
-                            )}
-                        </div>
-                        <div>
-                            <h4 className="text-white font-semibold">{skill.name}</h4>
-                            <p className={`text-sm ${proficiency.color} font-medium`}>
-                                {proficiency.label}
-                            </p>
-                        </div>
-                    </div>
-                    <div className="text-right">
-                        <span className="text-2xl font-bold text-white">{skill.level}%</span>
-                        <p className="text-xs text-purple-400 font-japanese">
-                            {proficiency.japanese}
-                        </p>
-                    </div>
-                </div>
-
-                {/* Progress Bar */}
-                <div className="relative">
-                    <div className="w-full bg-slate-700 rounded-full h-3 overflow-hidden">
-                        <motion.div
-                            className="h-full bg-gradient-to-r from-purple-500 to-pink-500 rounded-full relative"
-                            initial={{ width: 0 }}
-                            animate={isInView ? { width: `${skill.level}%` } : { width: 0 }}
-                            transition={{ duration: 1.5, delay: index * 0.1, ease: "easeOut" }}
-                        >
-                            <div className="absolute right-0 top-0 w-2 h-full bg-white/30 blur-sm" />
-                        </motion.div>
-                    </div>
-
-                    {/* Glow effect */}
-                    <motion.div
-                        className="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full opacity-0 group-hover:opacity-20 blur-sm transition-opacity duration-300"
-                        style={{ width: `${skill.level}%` }}
-                    />
-                </div>
-
-                {/* Hover details */}
-                {hoveredSkill === skill.name && (
-                    <motion.div
-                        className="absolute -top-2 -right-2 bg-slate-900 border border-purple-500/50 rounded-lg p-3 shadow-xl z-10"
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.2 }}
-                    >
-                        <div className="flex items-center space-x-2">
-                            <TrendingUp size={16} className="text-purple-400" />
-                            <span className="text-sm text-white font-medium">
-                                {skill.level >= 85 ? 'Mastery Level' : 'Growing'}
-                            </span>
-                        </div>
-                    </motion.div>
-                )}
-            </div>
-        </motion.div>
-    )
-}
-
-SkillBar.propTypes = {
-    skill: PropTypes.shape({
-        name: PropTypes.string.isRequired,
-        level: PropTypes.number.isRequired,
-        icon: PropTypes.string
-    }).isRequired,
-    index: PropTypes.number.isRequired,
-    isInView: PropTypes.bool.isRequired,
-    hoveredSkill: PropTypes.string,
-    setHoveredSkill: PropTypes.func.isRequired,
-    getProficiencyLevel: PropTypes.func.isRequired
-}
 
 const Skills = () => {
     const [selectedCategory, setSelectedCategory] = useState('all')
@@ -164,6 +63,86 @@ const Skills = () => {
         if (level >= 75) return { label: 'Advanced', color: 'text-blue-400', japanese: '上級' }
         if (level >= 60) return { label: 'Intermediate', color: 'text-yellow-400', japanese: '中級' }
         return { label: 'Beginner', color: 'text-orange-400', japanese: '初級' }
+    }
+
+    // Skill Bar Component
+    const SkillBar = ({ skill, index }) => {
+        const proficiency = getProficiencyLevel(skill.level)
+
+        return (
+            <motion.div
+                className="group relative"
+                initial={{ opacity: 0, y: 20, scale: 0.95 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ type: "spring", stiffness: 100, delay: index * 0.1 }}
+                onHoverStart={() => setHoveredSkill(skill.name)}
+                onHoverEnd={() => setHoveredSkill(null)}
+            >
+                <div className="bg-slate-800/50 backdrop-blur-lg rounded-xl p-6 border border-slate-700/50 hover:border-purple-500/50 transition-all duration-300 hover:bg-slate-800/70">
+                    {/* Skill Header */}
+                    <div className="flex items-center justify-between mb-4">
+                        <div className="flex items-center space-x-3">
+                            <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
+                                {skill.icon ? (
+                                    <span className="text-xl">{skill.icon}</span>
+                                ) : (
+                                    <Code size={20} className="text-white" />
+                                )}
+                            </div>
+                            <div>
+                                <h4 className="text-white font-semibold">{skill.name}</h4>
+                                <p className={`text-sm ${proficiency.color} font-medium`}>
+                                    {proficiency.label}
+                                </p>
+                            </div>
+                        </div>
+                        <div className="text-right">
+                            <span className="text-2xl font-bold text-white">{skill.level}%</span>
+                            <p className="text-xs text-purple-400 font-japanese">
+                                {proficiency.japanese}
+                            </p>
+                        </div>
+                    </div>
+
+                    {/* Progress Bar */}
+                    <div className="relative">
+                        <div className="w-full bg-slate-700 rounded-full h-3 overflow-hidden">
+                            <motion.div
+                                className="h-full bg-gradient-to-r from-purple-500 to-pink-500 rounded-full relative"
+                                initial={{ width: 0 }}
+                                animate={isInView ? { width: `${skill.level}%` } : { width: 0 }}
+                                transition={{ duration: 1.5, delay: index * 0.1, ease: "easeOut" }}
+                            >
+                                <div className="absolute right-0 top-0 w-2 h-full bg-white/30 blur-sm" />
+                            </motion.div>
+                        </div>
+
+                        {/* Glow effect */}
+                        <motion.div
+                            className="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full opacity-0 group-hover:opacity-20 blur-sm transition-opacity duration-300"
+                            style={{ width: `${skill.level}%` }}
+                        />
+                    </div>
+
+                    {/* Hover details */}
+                    {hoveredSkill === skill.name && (
+                        <motion.div
+                            className="absolute -top-2 -right-2 bg-slate-900 border border-purple-500/50 rounded-lg p-3 shadow-xl z-10"
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{ duration: 0.2 }}
+                        >
+                            <div className="flex items-center space-x-2">
+                                <TrendingUp size={16} className="text-purple-400" />
+                                <span className="text-sm text-white font-medium">
+                                    {skill.level >= 85 ? 'Mastery Level' : 'Growing'}
+                                </span>
+                            </div>
+                        </motion.div>
+                    )}
+                </div>
+            </motion.div>
+        )
     }
 
     // Animation variants
@@ -270,10 +249,6 @@ const Skills = () => {
                             key={`${skill.name}-${selectedCategory}`}
                             skill={skill}
                             index={index}
-                            isInView={isInView}
-                            hoveredSkill={hoveredSkill}
-                            setHoveredSkill={setHoveredSkill}
-                            getProficiencyLevel={getProficiencyLevel}
                         />
                     ))}
                 </motion.div>
