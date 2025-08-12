@@ -11,10 +11,11 @@ const Hero = () => {
 
     const roles = [
         personalData.title,
-        'React Developer',
+        'Community Maintainer',
         'UI/UX Designer',
-        'Full Stack Engineer',
-        'フロントエンド開発者' // Japanese: Frontend Developer
+        'Data Scientist',
+        'ML & DL Engineer',
+        'IT Consultant'
     ]
 
     // Typewriter effect for roles
@@ -174,7 +175,7 @@ const Hero = () => {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, delay: 0.4 }}
                         >
-                            <h1 className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white leading-tight">
+                            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight">
                                 <span className="bg-gradient-to-r from-white via-purple-100 to-pink-100 bg-clip-text text-transparent">
                                     {personalData.name}
                                 </span>

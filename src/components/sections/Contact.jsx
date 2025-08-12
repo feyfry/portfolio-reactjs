@@ -200,7 +200,7 @@ const Contact = () => {
             label: 'Location',
             value: personalData.location,
             href: '#',
-            description: 'Based in Japan',
+            description: 'Based in Indonesia',
             japanese: '日本在住'
         }
     ]

@@ -115,9 +115,9 @@ const SocialLinks = ({ orientation = 'horizontal', size = 'medium', showLabels =
 
                         {/* Tooltip */}
                         <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-                            <div className="bg-slate-900 text-white px-2 py-1 rounded text-xs whitespace-nowrap shadow-lg">
+                            <div className="bg-fuchsia-400 text-white px-2 py-1 rounded text-xs whitespace-nowrap shadow-lg">
                                 {link.name}
-                                <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-2 h-2 bg-slate-900 rotate-45 -mt-1" />
+                                <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-2 h-2 bg-fuchsia-400 rotate-45 -mt-1" />
                             </div>
                         </div>
 

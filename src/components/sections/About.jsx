@@ -68,7 +68,6 @@ const About = () => {
 
     const handleAudioToggle = () => {
         setIsAudioPlaying(!isAudioPlaying)
-        // Implement audio functionality here
     }
 
     const fadeInUp = {
@@ -113,15 +112,15 @@ const About = () => {
                     </p>
                 </motion.div>
 
-                <div className="grid lg:grid-cols-3 gap-8 lg:gap-12 xl:gap-16">
-                    {/* Left Column - Image & Facts */}
+                {/* Main Content Grid - Image & Tabs */}
+                <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16">
+                    {/* Left Column - Profile Image Only */}
                     <motion.div
-                        className="lg:col-span-1"
+                        className="flex justify-center lg:justify-end"
                         {...fadeInUp}
                         viewport={{ once: true }}
                     >
-                        {/* Profile Image */}
-                        <div className="relative mb-8">
+                        <div className="relative w-full max-w-md">
                             <motion.div
                                 className="relative overflow-hidden rounded-2xl"
                                 whileHover={{ scale: 1.02 }}
@@ -145,47 +144,10 @@ const About = () => {
                                 </motion.button>
                             </motion.div>
                         </div>
-
-                        {/* Personal Facts */}
-                        <motion.div
-                            className="card card-hover"
-                            variants={stagger}
-                            initial="initial"
-                            whileInView="animate"
-                            viewport={{ once: true }}
-                        >
-                            <h3 className="text-white font-semibold text-lg mb-6 text-center">
-                                Quick Facts
-                                <span className="block text-sm text-purple-400 font-japanese mt-1">基本情報</span>
-                            </h3>
-
-                            <div className="space-y-4">
-                                {personalFacts.map((fact, index) => {
-                                    const Icon = fact.icon
-                                    return (
-                                        <motion.div
-                                            key={fact.label}
-                                            className="flex items-center space-x-3 p-3 bg-slate-700/30 rounded-lg hover:bg-slate-700/50 transition-all duration-300"
-                                            variants={fadeInUp}
-                                            custom={index}
-                                        >
-                                            <div className="w-10 h-10 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center flex-shrink-0">
-                                                <Icon size={18} className="text-white" />
-                                            </div>
-                                            <div className="flex-1 min-w-0">
-                                                <p className="text-gray-300 text-sm">{fact.label}</p>
-                                                <p className="text-white font-medium">{fact.value}</p>
-                                                <p className="text-purple-400 text-xs font-japanese">{fact.japanese}</p>
-                                            </div>
-                                        </motion.div>
-                                    )
-                                })}
-                            </div>
-                        </motion.div>
                     </motion.div>
 
-                    {/* Right Column - Content */}
-                    <div className="lg:col-span-2 content-spacing">
+                    {/* Right Column - Tab Content */}
+                    <div className="content-spacing">
                         {/* Tab Navigation */}
                         <motion.div
                             className="flex flex-wrap gap-2 mb-8 lg:mb-12"
@@ -200,7 +162,7 @@ const About = () => {
                                     <motion.button
                                         key={tab.id}
                                         onClick={() => setActiveTab(tab.id)}
-                                        className={`flex items-center space-x-2 px-4 md:px-6 py-3 rounded-full font-medium transition-all duration-300 ${activeTab === tab.id
+                                        className={`flex items-center space-x-2 px-4 md:px-3 py-3 rounded-full font-medium transition-all duration-300 ${activeTab === tab.id
                                             ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg'
                                             : 'bg-slate-800 text-gray-400 hover:bg-slate-700 hover:text-white'
                                             }`}
@@ -330,6 +292,48 @@ const About = () => {
                         </motion.div>
                     </div>
                 </div>
+
+                {/* Quick Facts Section - Full Width */}
+                <motion.div
+                    className="mt-16 lg:mt-20"
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8 }}
+                    viewport={{ once: true }}
+                >
+                    <h3 className="text-2xl md:text-3xl font-bold text-white mb-8 text-center">
+                        Quick Facts
+                        <span className="block text-sm text-purple-400 font-japanese mt-2">
+                            基本情報
+                        </span>
+                    </h3>
+
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
+                        {personalFacts.map((fact, index) => {
+                            const Icon = fact.icon
+                            return (
+                                <motion.div
+                                    key={fact.label}
+                                    className="card card-hover text-center group cursor-default"
+                                    initial={{ opacity: 0, scale: 0.8 }}
+                                    whileInView={{ opacity: 1, scale: 1 }}
+                                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                                    viewport={{ once: true }}
+                                    whileHover={{ scale: 1.05, y: -5 }}
+                                >
+                                    <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                                        <Icon size={24} className="text-white" />
+                                    </div>
+                                    <div>
+                                        <p className="text-gray-300 text-sm uppercase tracking-wider font-medium mb-2">{fact.label}</p>
+                                        <p className="text-white font-bold text-lg mb-1">{fact.value}</p>
+                                        <p className="text-purple-400 text-sm font-japanese">{fact.japanese}</p>
+                                    </div>
+                                </motion.div>
+                            )
+                        })}
+                    </div>
+                </motion.div>
 
                 {/* Interests Section */}
                 <motion.div

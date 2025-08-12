@@ -220,7 +220,7 @@ const SplashScreen = ({
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, delay: 0.4 }}
                         >
-                            <h1 className={`text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-light ${themeConfig.text} font-japanese mb-4 leading-tight`}>
+                            <h1 className={`text-xl md:text-2xl lg:text-3xl xl:text-4xl font-light ${themeConfig.text} font-japanese mb-4 leading-tight`}>
                                 {title}
                             </h1>
                             <p className={`text-lg md:text-xl lg:text-2xl ${themeConfig.subtitle} font-japanese`}>
