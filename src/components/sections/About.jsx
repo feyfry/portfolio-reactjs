@@ -53,7 +53,6 @@ const About = () => {
 
     const interests = [
         { name: 'Photography', emoji: '📸', japanese: '写真' },
-        { name: 'Travel', emoji: '✈️', japanese: '旅行' },
         { name: 'Music', emoji: '🎵', japanese: '音楽' },
         { name: 'Gaming', emoji: '🎮', japanese: 'ゲーム' },
         { name: 'Cooking', emoji: '🍳', japanese: '料理' },
@@ -61,7 +60,7 @@ const About = () => {
     ]
 
     const achievements = [
-        { title: '10+ Successful Projects', icon: '🚀' },
+        { title: '30+ Successful Projects', icon: '🚀' },
         { title: 'React Expert Certification', icon: '⚛️' },
         { title: 'Open Source Contributor', icon: '🌟' },
         { title: 'Hackathon Winner', icon: '🏆' }
@@ -347,7 +346,7 @@ const About = () => {
                         </span>
                     </h3>
 
-                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6">
+                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6">
                         {interests.map((interest, index) => (
                             <motion.div
                                 key={interest.name}

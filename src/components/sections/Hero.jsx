@@ -75,9 +75,9 @@ const Hero = () => {
     }
 
     return (
-        <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-purple-900/20 to-slate-900">
-            {/* Animated Background Elements */}
-            <div className="absolute inset-0 overflow-hidden">
+        <div className="relative py-10 min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-purple-900/20 to-slate-900 w-screen">
+            {/* Animated Background Elements - Full Screen */}
+            <div className="fixed inset-0 overflow-hidden pointer-events-none">
                 {/* Grid Pattern */}
                 <div className="absolute inset-0 bg-slate-900/5 opacity-40" />
 

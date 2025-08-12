@@ -125,7 +125,7 @@ const Navigation = () => {
                             layout
                         >
                             <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center flex-shrink-0">
-                                <span className="text-white font-bold text-sm">P</span>
+                                <img src="/public/1uf4yi1uf4yi1uf4.svg" alt="Logo" className="w-8 h-8 object-cover rounded-lg" />
                             </div>
                             <AnimatePresence>
                                 {isExpanded && (
@@ -136,7 +136,7 @@ const Navigation = () => {
                                         exit={{ opacity: 0, width: 0 }}
                                         transition={{ duration: 0.2 }}
                                     >
-                                        Portfolio
+                                        fey's
                                     </motion.span>
                                 )}
                             </AnimatePresence>
@@ -153,7 +153,7 @@ const Navigation = () => {
                                 <motion.button
                                     key={item.id}
                                     onClick={() => handleNavigation(item.href)}
-                                    className={`w-full flex items-center space-x-3 px-4 py-3 transition-all duration-300 relative group ${isActive
+                                    className={`w-full flex items-center space-x-3 px-5 py-2 transition-all duration-300 relative group ${isActive
                                             ? 'bg-gradient-to-r from-purple-500/20 to-pink-500/20 text-purple-400'
                                             : 'text-gray-400 hover:text-white hover:bg-slate-800/50'
                                         }`}

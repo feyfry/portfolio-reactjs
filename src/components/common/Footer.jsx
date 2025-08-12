@@ -52,7 +52,7 @@ const Footer = () => {
     return (
         <footer className="bg-slate-950 border-t border-slate-800">
             {/* Main Footer Content */}
-            <div className="container mx-auto px-6 py-16">
+            <div className="container-content relative z-10 py-12">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     {/* Brand Section */}
                     <motion.div
@@ -177,7 +177,7 @@ const Footer = () => {
 
             {/* Bottom Footer */}
             <div className="border-t border-slate-800 py-6">
-                <div className="container mx-auto px-6">
+                <div className="container-content relative z-10 py-6">
                     <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
                         {/* Copyright */}
                         <motion.div
@@ -194,7 +194,7 @@ const Footer = () => {
                             >
                                 <Heart size={16} className="text-red-500 fill-current" />
                             </motion.div>
-                            <span>in Japan</span>
+                            <span>in Jakarta</span>
                         </motion.div>
 
                         {/* Additional Links */}
@@ -237,7 +237,7 @@ const Footer = () => {
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
             >
-                <p className="text-gray-500 text-xs font-japanese">
+                <p className="text-gray-300 text-xs font-japanese">
                     ありがとうございます (Thank you for visiting)
                 </p>
             </motion.div>

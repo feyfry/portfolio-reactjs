@@ -6,7 +6,6 @@ import {
     MapPin,
     Send,
     MessageSquare,
-    Calendar,
     CheckCircle,
     AlertCircle,
     Heart,
@@ -114,13 +113,6 @@ const Contact = () => {
             japanese: 'メール',
             description: 'Reach out via email'
         },
-        {
-            id: 'calendar',
-            label: 'Schedule Call',
-            icon: Calendar,
-            japanese: '通話予約',
-            description: 'Book a consultation'
-        }
     ]
 
     const projectTypes = [
@@ -224,7 +216,7 @@ const Contact = () => {
                 <div className="absolute inset-0 bg-slate-900/5 opacity-40" />
             </div>
 
-            <div className="container mx-auto px-6 relative z-10">
+            <div className="container-content relative z-10">
                 {/* Section Header */}
                 <motion.div
                     className="text-center mb-16"
@@ -562,39 +554,6 @@ const Contact = () => {
                                     </motion.a>
                                 </motion.div>
                             )}
-
-                            {selectedContactMethod === 'calendar' && (
-                                <motion.div
-                                    key="calendar"
-                                    className="bg-slate-800/30 backdrop-blur-lg rounded-2xl p-8 border border-slate-700/50 text-center"
-                                    initial={{ opacity: 0, y: 20 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    exit={{ opacity: 0, y: -20 }}
-                                    transition={{ duration: 0.5 }}
-                                >
-                                    <Calendar size={48} className="text-purple-400 mx-auto mb-6" />
-                                    <h3 className="text-2xl font-bold text-white mb-4">Schedule a Call</h3>
-                                    <p className="text-gray-400 mb-6">
-                                        Let's have a conversation about your project. Choose a time that works best for you.
-                                    </p>
-                                    <div className="space-y-4">
-                                        <motion.button
-                                            className="w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white py-3 rounded-xl font-semibold"
-                                            whileHover={{ scale: 1.02 }}
-                                            whileTap={{ scale: 0.98 }}
-                                        >
-                                            Book 30-min Consultation
-                                        </motion.button>
-                                        <motion.button
-                                            className="w-full bg-slate-700 text-white py-3 rounded-xl font-semibold hover:bg-slate-600 transition-colors duration-300"
-                                            whileHover={{ scale: 1.02 }}
-                                            whileTap={{ scale: 0.98 }}
-                                        >
-                                            Book 60-min Deep Dive
-                                        </motion.button>
-                                    </div>
-                                </motion.div>
-                            )}
                         </AnimatePresence>
                     </motion.div>
                 </div>
@@ -613,7 +572,7 @@ const Contact = () => {
                         <Coffee size={24} className="text-purple-400" />
                     </div>
                     <h3 className="text-2xl font-bold text-white mb-4">
-                        Let's Grab a Virtual Coffee!
+                        Let's Grab a Virtual Tea!
                     </h3>
                     <p className="text-gray-400 text-lg mb-6">
                         I believe the best projects start with great conversations.

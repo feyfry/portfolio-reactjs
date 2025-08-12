@@ -1,14 +1,14 @@
 {
     "links": [{
             "name": "GitHub",
-            "url": "https://github.com/alextanaka",
+            "url": "https://github.com/feyfry",
             "icon": "github",
             "color": "#333333",
             "description": "Open source projects and code repositories",
             "stats": {
-                "followers": 245,
-                "repositories": 28,
-                "stars": 450
+                "followers": 7,
+                "repositories": 50,
+                "stars": 39
             },
             "japanese": {
                 "name": "ギットハブ",
@@ -17,7 +17,7 @@
         },
         {
             "name": "LinkedIn",
-            "url": "https://linkedin.com/in/alex-tanaka-dev",
+            "url": "https://linkedin.com/in/fey-mickala-headley",
             "icon": "linkedin",
             "color": "#0077b5",
             "description": "Professional network and career updates",
@@ -33,7 +33,7 @@
         },
         {
             "name": "Twitter",
-            "url": "https://twitter.com/alextanaka_dev",
+            "url": "https://x.com/HivernNorn",
             "icon": "twitter",
             "color": "#1da1f2",
             "description": "Tech thoughts, project updates, and community engagement",
@@ -49,7 +49,7 @@
         },
         {
             "name": "Email",
-            "url": "mailto:alex.tanaka@example.com",
+            "url": "mailto:feyz@feyfry.dev",
             "icon": "mail",
             "color": "#ea4335",
             "description": "Direct contact for business inquiries",
@@ -61,7 +61,7 @@
         },
         {
             "name": "Instagram",
-            "url": "https://instagram.com/alextanaka.codes",
+            "url": "https://instagram.com/feymickala",
             "icon": "instagram",
             "color": "#e1306c",
             "description": "Behind the scenes, travel, and lifestyle content",
@@ -76,40 +76,8 @@
             }
         },
         {
-            "name": "YouTube",
-            "url": "https://youtube.com/@alextanaka-dev",
-            "icon": "youtube",
-            "color": "#ff0000",
-            "description": "Coding tutorials and tech reviews",
-            "stats": {
-                "subscribers": 2500,
-                "videos": 45,
-                "views": "50K+"
-            },
-            "japanese": {
-                "name": "ユーチューブ",
-                "description": "コーディングチュートリアルと技術レビュー"
-            }
-        },
-        {
-            "name": "Dev.to",
-            "url": "https://dev.to/alextanaka",
-            "icon": "pen-tool",
-            "color": "#0a0a0a",
-            "description": "Technical articles and programming insights",
-            "stats": {
-                "followers": 350,
-                "articles": 23,
-                "reactions": 1200
-            },
-            "japanese": {
-                "name": "Dev.to",
-                "description": "技術記事とプログラミングの洞察"
-            }
-        },
-        {
             "name": "Medium",
-            "url": "https://medium.com/@alextanaka",
+            "url": "https://medium.com/@feyfry",
             "icon": "edit",
             "color": "#00ab6c",
             "description": "In-depth technical writing and career insights",
@@ -125,7 +93,7 @@
         },
         {
             "name": "Discord",
-            "url": "https://discord.gg/alextanaka",
+            "url": "https://discord.gg/0xil",
             "icon": "message-circle",
             "color": "#5865f2",
             "description": "Join my coding community and live discussions",
@@ -138,29 +106,12 @@
                 "name": "ディスコード",
                 "description": "コーディングコミュニティとライブディスカッションに参加"
             }
-        },
-        {
-            "name": "Twitch",
-            "url": "https://twitch.tv/alextanaka_codes",
-            "icon": "tv",
-            "color": "#9146ff",
-            "description": "Live coding streams and tech talks",
-            "stats": {
-                "followers": 320,
-                "streams": 25,
-                "avgViewers": 45
-            },
-            "schedule": "Saturdays 2PM JST",
-            "japanese": {
-                "name": "ツイッチ",
-                "description": "ライブコーディング配信と技術講演"
-            }
         }
     ],
-    "primary": ["github", "linkedin", "email", "twitter"],
-    "professional": ["github", "linkedin", "dev.to", "medium", "email"],
-    "social": ["twitter", "instagram", "youtube", "discord"],
-    "content": ["youtube", "dev.to", "medium", "twitch"],
+    "primary": ["github", "discord", "email", "twitter"],
+    "professional": ["github", "discord", "twitter", "medium", "email"],
+    "social": ["twitter", "instagram", "discord"],
+    "content": ["medium", "medium", "twitter"],
     "messaging": ["email", "discord", "twitter"],
     "preferences": {
         "businessInquiries": "email",
@@ -177,13 +128,13 @@
     "availability": {
         "email": {
             "responseTime": "24 hours",
-            "bestTime": "9 AM - 6 PM JST",
+            "bestTime": "9 AM - 6 PM Asia/Jakarta",
             "japanese": "24時間以内に返信"
         },
         "discord": {
-            "responseTime": "2-4 hours",
-            "bestTime": "Evening JST",
-            "japanese": "2-4時間以内に返信"
+            "responseTime": "1-2 hours",
+            "bestTime": "Evening Asia/Jakarta",
+            "japanese": "1-2時間以内に返信"
         },
         "twitter": {
             "responseTime": "1-2 hours",
@@ -197,15 +148,9 @@
         }
     },
     "contentSchedule": {
-        "youtube": {
-            "frequency": "Bi-weekly",
-            "day": "Sundays",
-            "time": "10 AM JST",
-            "japanese": "隔週日曜日午前10時"
-        },
         "blog": {
             "frequency": "Weekly",
-            "platform": "Dev.to & Medium",
+            "platform": "Medium",
             "day": "Wednesdays",
             "japanese": "毎週水曜日"
         },
@@ -218,13 +163,6 @@
             "frequency": "3-4 times per week",
             "type": "Stories, posts, behind-the-scenes",
             "japanese": "週3-4回、ストーリー、投稿、舞台裏"
-        },
-        "twitch": {
-            "frequency": "Weekly",
-            "day": "Saturdays",
-            "time": "2 PM JST",
-            "duration": "2-3 hours",
-            "japanese": "毎週土曜日午後2時、2-3時間"
         }
     },
     "communityGuidelines": {
@@ -234,12 +172,14 @@
             "Knowledge sharing and learning",
             "Supporting fellow developers"
         ],
-        "languages": ["English", "Japanese"],
+        "languages": ["English", "Japanese", "Indonesian", "Chinese"],
         "topics": [
             "Web Development",
             "React/JavaScript",
             "Career Advice",
             "Tech Industry",
+            "Community Building",
+            "Open Source Contributions",
             "Programming Best Practices"
         ],
         "japanese": {
@@ -254,6 +194,8 @@
                 "React/JavaScript",
                 "キャリアアドバイス",
                 "技術業界",
+                "コミュニティ構築",
+                "オープンソースへの貢献",
                 "プログラミングのベストプラクティス"
             ]
         }

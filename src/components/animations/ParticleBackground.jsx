@@ -368,7 +368,7 @@ const ParticleBackground = ({
     return (
         <div
             ref={containerRef}
-            className={`relative overflow-hidden ${className}`}
+            className={`fixed inset-0 overflow-hidden pointer-events-none z-0 ${className}`}
             style={{ ...style }}
             {...props}
         >

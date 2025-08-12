@@ -92,10 +92,10 @@ const Header = () => {
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                     >
-                        <div className="w-10 h-10 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
-                            <span className="text-white font-bold text-lg">P</span>
+                        <div className="w-10 h-10 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg overflow-hidden flex items-center justify-center">
+                            <img src="/public/1uf4yi1uf4yi1uf4.svg" alt="Logo" className="w-10 h-10 object-cover rounded-lg" />
                         </div>
-                        <span className="text-white font-bold text-xl hidden sm:block">Portfolio</span>
+                        <span className="text-white font-bold text-xl hidden sm:block">fey's</span>
                     </motion.div>
 
                     {/* Desktop Navigation */}

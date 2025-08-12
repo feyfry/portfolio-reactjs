@@ -24,8 +24,8 @@ const ScrollToTop = ({
 
     // Position classes
     const positionClasses = {
-        'bottom-right': 'bottom-6 right-6',
-        'bottom-left': 'bottom-6 left-6',
+        'bottom-right': 'bottom-6 right-3',
+        'bottom-left': 'bottom-6 left-4',
         'bottom-center': 'bottom-6 left-1/2 transform -translate-x-1/2',
         'top-right': 'top-6 right-6',
         'top-left': 'top-6 left-6'
@@ -199,7 +199,7 @@ const ScrollToTop = ({
                 {isVisible && (
                     <motion.button
                         onClick={scrollToTop}
-                        className={`fixed ${positionClasses[position]} z-50 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg px-3 py-2 flex flex-col items-center shadow-lg hover:shadow-xl transition-all duration-300 group min-w-[60px]`}
+                        className={`fixed ${positionClasses[position]} z-50 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg px-2 py-2 flex flex-col items-center shadow-lg hover:shadow-xl transition-all duration-300 group min-w-[60px]`}
                         initial={{ opacity: 0, scale: 0, rotate: -180 }}
                         animate={{ opacity: 1, scale: 1, rotate: 0 }}
                         exit={{ opacity: 0, scale: 0, rotate: 180 }}

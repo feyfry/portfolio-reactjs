@@ -248,7 +248,7 @@ export const FloatingSocialLinks = () => {
                             href={link.url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="w-12 h-12 bg-slate-800/90 backdrop-blur-lg border border-slate-700 rounded-full flex items-center justify-center group hover:border-slate-600 transition-all duration-300 shadow-lg"
+                            className="w-8 h-8 bg-slate-800/90 backdrop-blur-lg border border-slate-700 rounded-full flex items-center justify-center group hover:border-slate-600 transition-all duration-300 shadow-lg"
                             initial={{ opacity: 0, x: 50 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}

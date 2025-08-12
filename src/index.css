@@ -233,8 +233,17 @@
 
     .container-content {
         @apply w-full mx-auto px-6 sm:px-8 lg:px-12 xl:px-16;
-        max-width: 1400px;
-        /* Slightly larger for better content layout */
+        max-width: 1280px;
+        /* Desktop: Account for sidebar (left) and social links (right) */
+        margin-left: clamp(6rem, 8vw, 12rem);
+        margin-right: clamp(6rem, 8vw, 12rem);
+    }
+
+    @media (max-width: 1024px) {
+        .container-content {
+            margin-left: auto;
+            margin-right: auto;
+        }
     }
 
     /* Section Spacing System */

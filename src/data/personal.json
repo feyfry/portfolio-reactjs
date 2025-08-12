@@ -1,24 +1,24 @@
 {
-    "name": "Alex Tanaka",
+    "name": "Fey Mickala Headley",
     "title": "Full Stack Developer",
     "bio": "Passionate developer creating digital experiences that bridge technology and human connection. I specialize in modern web applications with a focus on user experience and performance.",
-    "location": "Tokyo, Japan",
-    "email": "alex.tanaka@example.com",
-    "phone": "+81-90-1234-5678",
-    "website": "https://alextanaka.dev",
+    "location": "Jakarta, Indonesia",
+    "email": "feyz@feyfry.dev",
+    "phone": "+62 899-9991-140",
+    "website": "https://feyfry.dev",
     "avatar": "/assets/images/profile/avatar.jpg",
     "resume": "/assets/files/resume.pdf",
-    "languages": ["JavaScript", "TypeScript", "Python", "Japanese", "English"],
+    "languages": ["JavaScript", "PHP", "Python", "Indonesia", "Japanese", "English", "Chinese"],
     "availability": "Open to Work",
-    "timezone": "Asia/Tokyo",
-    "yearsOfExperience": 3,
-    "projectsCompleted": 50,
-    "happyClients": 25,
+    "timezone": "Asia/Jakarta",
+    "yearsOfExperience": 5,
+    "projectsCompleted": 30,
+    "happyClients": 15,
     "japanese": {
-        "name": "田中アレックス",
+        "name": "ヘッドリーミカラフェイ",
         "title": "フルスタック開発者",
         "bio": "技術と人間のつながりを架け橋するデジタル体験を創造する情熱的な開発者です。ユーザーエクスペリエンスとパフォーマンスに焦点を当てたモダンなWebアプリケーションを専門としています。",
-        "location": "東京、日本",
+        "location": "ジャカルタ、インドネシア",
         "availability": "転職活動中",
         "greeting": "こんにちは！"
     },
@@ -37,12 +37,6 @@
             "emoji": "📸",
             "japanese": "写真撮影",
             "description": "Capturing moments and exploring creative perspectives"
-        },
-        {
-            "name": "Travel",
-            "emoji": "✈️",
-            "japanese": "旅行",
-            "description": "Exploring new cultures and gaining fresh inspiration"
         },
         {
             "name": "Music Production",
@@ -107,27 +101,24 @@
         }
     ],
     "currentFocus": [
-        "React 18 & Next.js 13",
-        "TypeScript Development",
+        "React.js & Next.js",
+        "PHP & Python Development",
         "Cloud Architecture",
-        "Mobile-First Design",
+        "Machine Learning & Deep Learning",
+        "UI/UX Design",
         "Performance Optimization"
     ],
     "funFacts": [{
-            "fact": "Speaks 3 languages fluently",
-            "japanese": "3ヶ国語を流暢に話します"
+            "fact": "Speaks 4 languages fluently",
+            "japanese": "4ヶ国語を流暢に話します"
         },
         {
-            "fact": "Has visited 15+ countries",
-            "japanese": "15ヶ国以上を訪問済み"
+            "fact": "Tea enthusiast (drinks 4+ cups daily)",
+            "japanese": "ティー愛好家（1日4杯以上）"
         },
         {
-            "fact": "Coffee enthusiast (drinks 4+ cups daily)",
-            "japanese": "コーヒー愛好家（1日4杯以上）"
-        },
-        {
-            "fact": "Maintains a 500+ day GitHub streak",
-            "japanese": "GitHub500日以上連続コミット"
+            "fact": "Maintains a 30+ day GitHub streak",
+            "japanese": "GitHub30日以上連続コミット"
         },
         {
             "fact": "Volunteers at local coding bootcamps",
@@ -135,26 +126,26 @@
         }
     ],
     "workingHours": {
-        "timezone": "JST",
+        "timezone": "Asia/Jakarta",
         "available": "9:00 AM - 6:00 PM",
-        "responseTime": "Within 2 hours",
+        "responseTime": "Within 1 hours",
         "japanese": {
             "available": "午前9時 - 午後6時",
-            "responseTime": "2時間以内"
+            "responseTime": "1時間以内"
         }
     },
     "preferences": {
         "workEnvironment": "Remote-first with occasional office visits",
-        "teamSize": "Small to medium teams (3-8 people)",
-        "projectTypes": ["Web Applications", "Mobile Apps", "E-commerce", "SaaS"],
+        "teamSize": "Small to medium teams (3-5 people)",
+        "projectTypes": ["Web Applications", "Mobile Apps", "Coffee Shop", "SaaS"],
         "technologies": {
-            "favorites": ["React", "Node.js", "TypeScript", "PostgreSQL"],
-            "learning": ["Rust", "Go", "WebAssembly", "Three.js"],
+            "favorites": ["React", "Node.js", "Laravel", "Flask", "PostgreSQL"],
+            "learning": ["Rust", "Go", "Web3 Architecture", "Blockchain Development"],
             "avoid": ["Legacy PHP", "jQuery"]
         },
         "japanese": {
             "workEnvironment": "リモートワーク中心、時々オフィス出社",
-            "teamSize": "小〜中規模チーム（3-8人）"
+            "teamSize": "小〜中規模チーム（3-5人）"
         }
     }
 }

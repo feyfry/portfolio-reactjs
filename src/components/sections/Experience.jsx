@@ -316,7 +316,7 @@ const Experience = () => {
                 <div className="absolute bottom-1/4 left-0 w-96 h-96 bg-pink-500/5 rounded-full blur-3xl" />
             </div>
 
-            <div className="container mx-auto px-6 relative z-10">
+            <div className="container-content relative z-10">
                 {/* Section Header */}
                 <motion.div
                     className="text-center mb-16"
@@ -391,7 +391,7 @@ const Experience = () => {
                     transition={{ duration: 0.6 }}
                     viewport={{ once: true }}
                 >
-                    <div className="bg-slate-800/50 backdrop-blur-lg rounded-full p-2 border border-slate-700/50">
+                    <div className="bg-slate-800/50 backdrop-blur-lg rounded-full p-2 border border-slate-700/50 justify-center flex space-x-4">
                         {tabs.map((tab) => {
                             const Icon = tab.icon
                             return (
